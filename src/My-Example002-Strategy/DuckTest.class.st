@@ -6,10 +6,13 @@ Class {
 
 { #category : #tests }
 DuckTest >> testFly [
-	| duck flyWithWings |
+	| duck flyWithWings rubberDuck flyNoWay |
 	flyWithWings := FlyWithWings new.
 	duck := Duck flyBehavier: flyWithWings.
-	self assert: duck fly equals: 'flying with wings!'
+	self assert: duck fly equals: 'flying with wings!'.
+	flyNoWay := FlyNoWay new.
+	rubberDuck := RubberDuck flyBehavier: flyNoWay.
+	self assert: rubberDuck fly equals: 'fly no way!'
 	
 ]
 
