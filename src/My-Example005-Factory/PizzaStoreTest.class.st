@@ -6,7 +6,7 @@ Class {
 
 { #category : #tests }
 PizzaStoreTest >> testPizzaStore [
-	| nyStore ChicagoStore chicagoStore |
+	| nyStore |
 	nyStore := NYPizzaStore new.
 	self assert: (nyStore orderPizza: #Cheese) name equals: 'NewYork Style Cheese Pizza'.
 
