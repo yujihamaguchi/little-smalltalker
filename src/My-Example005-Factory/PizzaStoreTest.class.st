@@ -7,11 +7,14 @@ Class {
 { #category : #tests }
 PizzaStoreTest >> testPizzaStore [
 	| pizza store |
-	pizza := NYStyleCheesePizza construct.
-	pizza stub name willReturn: 'foo'.
-	store := NYPizzaStore new.
-	(store stub orderPizza: #Foo) willReturn: pizza.
-	self assert: (store orderPizza: #Foo) name equals: 'foo'.
-	(pizza should receive name) once .
-
+	pizza := Pizza new.
+	pizza stub.
+	store := PizzaStore new.
+	(store stub createPizza: #Foo) willReturn: pizza.
+	self assert: (store orderPizza: #Foo) equals: pizza.
+	(store should receive createPizza: #Foo) once.
+	pizza should receive prepare once.
+	pizza should receive bake once.
+	pizza should receive cut once.
+	pizza should receive box once.
 ]
