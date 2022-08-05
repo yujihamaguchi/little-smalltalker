@@ -5,7 +5,7 @@ Class {
 }
 
 { #category : #tests }
-PizzaStoreTest >> testPizzaStore [
+PizzaStoreTest >> testOrderPizza [
 	| pizza store |
 	pizza := Pizza new.
 	pizza stub.
