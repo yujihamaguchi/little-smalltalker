@@ -15,6 +15,11 @@ Pizza class >> construct [
 	^ self subclassResponsibility 
 ]
 
+{ #category : #comparing }
+Pizza >> = aPizza [
+	^name = aPizza name
+]
+
 { #category : #decoration }
 Pizza >> bake [
 	^'normal baking..'
