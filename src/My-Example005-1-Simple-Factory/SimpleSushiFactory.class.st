@@ -1,11 +1,11 @@
 Class {
-	#name : #ToyosuSushiFactory,
-	#superclass : #SushiFactory,
+	#name : #SimpleSushiFactory,
+	#superclass : #Object,
 	#category : #'My-Example005-1-Simple-Factory'
 }
 
 { #category : #'as yet unclassified' }
-ToyosuSushiFactory >> createSushi: aSymbol [
+SimpleSushiFactory >> createSushi: aSymbol [
 	^ #Ikura = aSymbol
 		  ifTrue: [ Ikura new ]
 		  ifFalse: [ Sushi new ]
