@@ -5,10 +5,18 @@ Class {
 }
 
 { #category : #tests }
+NYPizzaStoreTest >> testCreatePizza [
+	| nyPizzaStore nyStyleCheesePizza |
+	nyStyleCheesePizza := (NYStyleCheesePizza new) initialize .
+	nyPizzaStore := NYPizzaStore new.
+	self assert: (nyPizzaStore createPizza: #Cheese) equals: nyStyleCheesePizza.
+]
+
+{ #category : #tests }
 NYPizzaStoreTest >> testOrderPizza [
-	| pizza store |
-	pizza := (NYStyleCheesePizza new) initialize .
-	store := NYPizzaStore new.
-	self assert: (store orderPizza: #Cheese) name equals: 'NewYork Style Cheese Pizza'.
+	| nyStyleCheesePizza nyPizzaStore |
+	nyStyleCheesePizza := (NYStyleCheesePizza new) initialize .
+	nyPizzaStore := NYPizzaStore new.
+	self assert: (nyPizzaStore orderPizza: #Cheese) equals: nyStyleCheesePizza .
 
 ]
