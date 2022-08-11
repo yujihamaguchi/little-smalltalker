@@ -6,5 +6,5 @@ Class {
 
 { #category : #'as yet unclassified' }
 IngredientFactory >> createSauce [
-	^ self
+	^ self subclassResponsibility 
 ]

@@ -8,8 +8,8 @@ Class {
 PastaStoreTest >> testOrderPasta [
 	| pastaStore pasta factory |
 	factory := IngredientFactory new.
-	factory stub createSauce.
-	pasta := Pasta factory: factory.
+	factory stub createSauce willReturn: Any.
+	pasta := Pasta factory: factory name: 'foo'.
 	pasta stub.
 	pastaStore := PastaStore new.
 	(pastaStore stub createPasta: #Foo) willReturn: pasta.
