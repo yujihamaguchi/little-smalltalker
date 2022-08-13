@@ -5,6 +5,11 @@ Class {
 }
 
 { #category : #'as yet unclassified' }
+NYIngredientFactory >> createNoodle [
+	^ ThinNoodle new
+]
+
+{ #category : #'as yet unclassified' }
 NYIngredientFactory >> createSauce [
 	^ ChiliSauce	 new
 ]

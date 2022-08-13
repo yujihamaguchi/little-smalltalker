@@ -2,9 +2,10 @@ Class {
 	#name : #Pasta,
 	#superclass : #Object,
 	#instVars : [
+		'name',
 		'factory',
 		'sauce',
-		'name'
+		'noodle'
 	],
 	#category : #'My-Example005-3-Abstruct-Factory'
 }
@@ -30,7 +31,8 @@ Pasta >> name [
 { #category : #decoration }
 Pasta >> prepare [
 	sauce := factory createSauce.
-	^self
+	noodle := factory createNoodle.
+	^ self
 ]
 
 { #category : #initialization }

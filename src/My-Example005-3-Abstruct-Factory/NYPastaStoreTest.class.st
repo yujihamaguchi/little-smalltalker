@@ -10,5 +10,4 @@ NYPastaStoreTest >> testCreatePasta [
 	nyStyleCheesePasta := NYStyleCheesePasta factory: Any name: 'NewYork Style Cheese Pasta'.
 	nyPastaStore := NYPastaStore new.
 	self assert: (nyPastaStore createPasta: #Cheese) equals: nyStyleCheesePasta.
-"TODO: Not only Sauce"
 ]
