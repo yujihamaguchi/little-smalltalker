@@ -4,12 +4,10 @@ Class {
 	#category : #'My-Example005-2-Factory-Method'
 }
 
-{ #category : #initialization }
-NYStyleCheesePizza >> initialize [
-	super initialize .
-	name := 'NewYork Style Cheese Pizza'.
-	dough := 'thin craft'.
-	sauce := 'marinara'.
-	toppings := Array with: 'NewYork Cheese'.
-	^self
+{ #category : #decoration }
+NYStyleCheesePizza >> prepare [
+	dough := ThinCraftDough new.
+	sauce := MarinaraSauce new.
+	toppings := Array with: NewYorkCheese new.
+	^ self 
 ]

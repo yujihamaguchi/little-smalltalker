@@ -8,7 +8,7 @@ Class {
 PizzaStoreTest >> testOrderPizza [
 	| pizza store |
 	pizza := Pizza new.
-	pizza stub.
+	pizza stub prepare willReturn: Any.
 	store := PizzaStore new.
 	(store stub createPizza: #Foo) willReturn: pizza.
 	self assert: (store orderPizza: #Foo) equals: pizza.

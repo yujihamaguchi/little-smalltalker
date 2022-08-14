@@ -10,6 +10,14 @@ Class {
 	#category : #'My-Example005-2-Factory-Method'
 }
 
+{ #category : #accessing }
+Pizza class >> name: aString [
+	| pizza |
+	pizza := self new.
+	pizza setName: aString.
+	^ pizza
+]
+
 { #category : #comparing }
 Pizza >> = aPizza [
 	^name = aPizza name
@@ -30,9 +38,9 @@ Pizza >> cut [
 	^'normal cutting..'
 ]
 
-{ #category : #initialization }
-Pizza >> initialize [
-	super initialize .
+{ #category : #accessing }
+Pizza >> dough [
+	^ dough
 ]
 
 { #category : #accessing }
@@ -42,14 +50,21 @@ Pizza >> name [
 
 { #category : #decoration }
 Pizza >> prepare [
-	^'normal preparing..'
+	^ self subclassResponsibility 
+]
+
+{ #category : #accessing }
+Pizza >> sauce [
+	^ sauce
 ]
 
 { #category : #initialization }
-Pizza >> setName: aNameSting dough: aDoughString sauce: aSauceString toppings: aCollection [
-	name := aNameSting .
-	dough := aDoughString .
-	sauce := aSauceString .
-	toppings := aCollection .
-	^self
+Pizza >> setName: aSting [
+	name := aSting .
+
+]
+
+{ #category : #accessing }
+Pizza >> toppings [
+	^ toppings
 ]
