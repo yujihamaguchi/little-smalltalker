@@ -1,9 +1,6 @@
 Class {
 	#name : #LightOnCommand,
 	#superclass : #Command,
-	#instVars : [
-		'light'
-	],
 	#category : #'My-Example007-Command'
 }
 
@@ -14,13 +11,14 @@ LightOnCommand class >> light: aLight [
 	^ lightOnCommand setLight: aLight
 ]
 
-{ #category : #execution }
-LightOnCommand >> execute [
-	light on
+{ #category : #'instance creation' }
+LightOnCommand class >> receiver: aReceiver [
+	| lightOnCommand |
+	lightOnCommand := self new.
+	^ lightOnCommand setReceiver: aReceiver
 ]
 
-{ #category : #initialization }
-LightOnCommand >> setLight: aLight [ 
-	light := aLight.
-	^self
+{ #category : #execution }
+LightOnCommand >> execute [
+	receiver on
 ]

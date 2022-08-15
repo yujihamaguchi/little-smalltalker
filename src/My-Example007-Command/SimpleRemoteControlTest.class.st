@@ -10,7 +10,7 @@ SimpleRemoteControlTest >> testButtonWasPressed [
 	remote := SimpleRemoteControl new.
 	light := Light new.
 	light stub.
-	command := LightOnCommand light: light.
+	command := LightOnCommand receiver: light.
 	command stub.
 	remote command: command.
 	remote buttonWasPressed.
