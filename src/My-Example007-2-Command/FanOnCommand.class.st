@@ -14,7 +14,7 @@ FanOnCommand class >> fan: aFan [
 
 { #category : #execution }
 FanOnCommand >> execute [
-	fan on
+	fan on.
 ]
 
 { #category : #initialization }

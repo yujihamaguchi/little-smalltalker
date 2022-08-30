@@ -18,20 +18,20 @@ RemoteControlTest >> testButtonWasPushed [
 	stereoOnCommand := StereoOnCommand receiver: Any.
 	stereoOnCommand stub execute willReturnYourself.
 	stereoOffCommand := StereoOffCommand receiver: Any.
-	stereoOffCommand stub execute willReturnYourself   .
+	stereoOffCommand stub execute willReturnYourself.
 	remote slot: 1 onCommand: stereoOnCommand offCommand: stereoOffCommand.
 
 	remote onButtonWasPushed: 0.
-	fanOnCommand should receive execute once.
-
 	remote offButtonWasPushed: 0.
+	remote undoButtonPushed.
+	fanOnCommand should receive execute twice.
 	fanOffCommand should receive execute once.
 
 	remote onButtonWasPushed: 1.
-	stereoOnCommand should receive execute once.
-
-	remote offButtonWasPushed: 1.
-	stereoOffCommand should receive execute once.
-	"TODO: implement undo command.( p.222 )"
+	remote undoButtonPushed.
+	remote onButtonWasPushed: 1.
+	remote offButtonWasPushed: 1.	
+	stereoOnCommand should receive execute twice.
+	stereoOffCommand should receive execute twice.
 	
 ]
