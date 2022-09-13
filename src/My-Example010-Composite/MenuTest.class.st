@@ -16,19 +16,19 @@ MenuTest >> testPrintMenu [
 	allMenus add: pancakeHouseMenu.
 	allMenus add: dinerMenu.
 	allMenus add: cafeMenu.
-	
 	dinerMenu add: (MenuItem name: 'Pasta' description: 'Good Pasta' price: 3.89).
 	dinerMenu add: dessertMenu.
 	
 	dessertMenu add: (MenuItem name: 'Apple pie' description: 'Good Pie' price: 1.59).
 	
 	self assert: allMenus print equals: 
-'- All Menu, All
-- Pancake House Menu, Breakfast
-- Diner Menu, Lunch
+'<All Menu, All
+<Pancake House Menu, Breakfast
+><Diner Menu, Lunch
 -- Pasta, Good Pasta, 3.89
-- Dessert Menu, Dessert
+<Dessert Menu, Dessert
 -- Apple pie, Good Pie, 1.59
-- Cafe Menu, Dinner
-'
+>><Cafe Menu, Dinner
+>>'
+
 ]

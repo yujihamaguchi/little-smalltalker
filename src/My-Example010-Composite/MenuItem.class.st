@@ -1,6 +1,11 @@
 Class {
 	#name : #MenuItem,
 	#superclass : #MenuComponent,
+	#instVars : [
+		'name',
+		'description',
+		'price'
+	],
 	#category : #'My-Example010-Composite'
 }
 
@@ -11,7 +16,7 @@ MenuItem class >> name: aName description: aDescription price: aPrice [
 
 { #category : #printing }
 MenuItem >> print [
-	^ '-- ', name, ', ', description, ', ', price
+	^ '-- ', name, ', ', description, ', ', price asString, Character cr asString
 ]
 
 { #category : #initialization }
