@@ -1,0 +1,20 @@
+Class {
+	#name : #PizzaStoreTest,
+	#superclass : #TestCase,
+	#category : #'Q052-Factory-Method'
+}
+
+{ #category : #tests }
+PizzaStoreTest >> testOrderPizza [
+	| pizza store |
+	pizza := Pizza new.
+	pizza stub prepare willReturn: Any.
+	store := PizzaStore new.
+	(store stub createPizza: #Foo) willReturn: pizza.
+	self assert: (store orderPizza: #Foo) equals: pizza.
+	(store should receive createPizza: #Foo) once.
+	pizza should receive prepare once.
+	pizza should receive bake once.
+	pizza should receive cut once.
+	pizza should receive box once.
+]
