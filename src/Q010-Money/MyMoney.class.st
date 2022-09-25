@@ -15,13 +15,27 @@ MyMoney class >> amount: aNumber currency: aSymbol [
 
 { #category : #arithmetic }
 MyMoney >> + aMoney [
-	^ MyMoney amount: (amount + aMoney amount) currency: currency
+	^ aMoney addMoney: self
 ]
 
 { #category : #comparing }
 MyMoney >> = aMoney [
-	^ amount = aMoney amount and: (currency = aMoney currency)
+	^ currency = aMoney currency & (amount = aMoney amount)
 	
+]
+
+{ #category : #adding }
+MyMoney >> addMoney: aMoney [
+	^ currency = aMoney currency
+		  ifTrue: [ 
+		  self species amount: amount + aMoney amount currency: currency ]
+		  ifFalse: [ 
+		  MyMoneySum monies: (OrderedCollection with: self with: aMoney) ]					
+]
+
+{ #category : #adding }
+MyMoney >> addMoneySum: aMoneySum [
+	^ aMoneySum addMoney: self
 ]
 
 { #category : #accessing }

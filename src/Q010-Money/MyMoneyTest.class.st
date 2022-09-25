@@ -14,25 +14,25 @@ MyMoneyTest >> test001Plus [
 ]
 
 { #category : #tests }
-MyMoneyTest >> testPlusDifferentCurrency [
+MyMoneyTest >> test002PlusDifferentCurrency [
 	| usd gbp expected |
 	usd := MyMoney amount: 5 currency: #USD.
 	gbp := MyMoney amount: 7 currency: #GBP.
-	expected := MyMoneySum monies: (Array with: usd with: gbp).
+	expected := MyMoneySum monies: (OrderedCollection with: usd with: gbp).
 	self assert: (usd + gbp) monies asSet equals: expected monies asSet
 ]
 
 { #category : #tests }
-MyMoneyTest >> testPlusMoneyAndMoneySum [
+MyMoneyTest >> test003PlusMoneyAndMoneySum [
 	| usd gbp expected |
 	usd := MyMoney amount: 5 currency: #USD.
 	gbp := MyMoney amount: 7 currency: #GBP.
-	expected := MyMoneySum monies: (Array with: usd with: gbp with: usd).
+	expected := MyMoneySum monies: (OrderedCollection with: usd with: gbp with: usd).
 	self assert: (usd + (gbp + usd)) monies asSet equals: expected monies asSet
 ]
 
 { #category : #tests }
-MyMoneyTest >> testPlusMoneySumAndMoney [
+MyMoneyTest >> test004PlusMoneySumAndMoney [
 	| usd gbp expected |
 	usd := MyMoney amount: 5 currency: #USD.
 	gbp := MyMoney amount: 7 currency: #GBP.
@@ -41,7 +41,7 @@ MyMoneyTest >> testPlusMoneySumAndMoney [
 ]
 
 { #category : #tests }
-MyMoneyTest >> testPlusMoneySumAndMoneySum [
+MyMoneyTest >> test005PlusMoneySumAndMoneySum [
 	| usd gbp expected |
 	usd := MyMoney amount: 5 currency: #USD.
 	gbp := MyMoney amount: 7 currency: #GBP.
