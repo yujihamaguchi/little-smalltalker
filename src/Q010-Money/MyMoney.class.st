@@ -26,11 +26,13 @@ MyMoney >> = aMoney [
 
 { #category : #adding }
 MyMoney >> addMoney: aMoney [
+	| moneySum |
 	^ currency = aMoney currency
 		  ifTrue: [ 
 		  self species amount: amount + aMoney amount currency: currency ]
 		  ifFalse: [ 
-		  MyMoneySum monies: (OrderedCollection with: self with: aMoney) ]					
+			  moneySum := MyMoneySum new initialize.
+			  moneySum monies: (OrderedCollection with: self with: aMoney) ]
 ]
 
 { #category : #adding }
