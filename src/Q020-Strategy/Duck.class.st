@@ -7,23 +7,23 @@ Class {
 	#category : #'Q020-Strategy'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : #initialization }
 Duck class >> flyBehavier: aFlyBehavier [
-	^self new setFlyBehavier: aFlyBehavier
+	^ self new setFlyBehavier: aFlyBehavier
 ]
 
 { #category : #'as yet unclassified' }
 Duck >> fly [
-	^flyBehavier fly
+	^ flyBehavier fly
 ]
 
-{ #category : #initialization }
+{ #category : #private }
 Duck >> setFlyBehavier: aFlyBehavier [
 	flyBehavier := aFlyBehavier.
-	^self
+	^ self
 ]
 
 { #category : #'as yet unclassified' }
 Duck >> swim [
-	^'swimming!'
+	^ 'swimming' 
 ]

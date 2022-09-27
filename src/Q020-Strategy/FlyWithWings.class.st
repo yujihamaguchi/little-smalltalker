@@ -6,5 +6,5 @@ Class {
 
 { #category : #'as yet unclassified' }
 FlyWithWings >> fly [
-	^'flying with wings!'
+	^ 'flying'
 ]
