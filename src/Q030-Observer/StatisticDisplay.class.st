@@ -1,30 +1,29 @@
 Class {
 	#name : #StatisticDisplay,
-	#superclass : #Object,
+	#superclass : #Observer,
 	#instVars : [
-		'temperature',
-		'humidity',
-		'pressure'
+		'temperature'
 	],
 	#category : #'Q030-Observer'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : #accessing }
 StatisticDisplay class >> weatherData: aWeatherData [
-	| statisticDisplay |
-	statisticDisplay := self new.
-	aWeatherData registerObserver: statisticDisplay.
-	^ statisticDisplay
+	^ self new setWeatherData: aWeatherData
 ]
 
 { #category : #api }
 StatisticDisplay >> display [
-	^ 'Statistic / temperature ', temperature asString , ' is Good!'
+	^ 'Statistic / temperature ', temperature asString ,' is Good!'
 ]
 
 { #category : #initialization }
-StatisticDisplay >> updateTemperature: aTemperatureFloat humidity: aHumidityFloat pressure: aPressureFloat [
-	temperature := aTemperatureFloat .
-	humidity := aHumidityFloat .
-	pressure := aPressureFloat .
+StatisticDisplay >> setWeatherData: aWeatherData [
+	temperature := aWeatherData temperature.
+	aWeatherData registerObserver: self.
+]
+
+{ #category : #'as yet unclassified' }
+StatisticDisplay >> updateTemperature: temperatureNumber humidity: humidityNumber pressure: pressureNumber [
+	temperature := temperatureNumber.
 ]

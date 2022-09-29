@@ -1,6 +1,6 @@
 Class {
 	#name : #WeatherData,
-	#superclass : #Object,
+	#superclass : #Subject,
 	#instVars : [
 		'observers',
 		'temperature',
@@ -10,31 +10,45 @@ Class {
 	#category : #'Q030-Observer'
 }
 
+{ #category : #accessing }
+WeatherData >> humidity [
+	^ humidity
+]
+
+{ #category : #initialization }
+WeatherData >> initialize [ 
+	observers := Set new.
+	^ self
+]
+
 { #category : #'as yet unclassified' }
-WeatherData class >> observers: aCollection [
-	^self new setObservers: aCollection
-	
-]
-
-{ #category : #'observers - experimental' }
-WeatherData >> registerObserver: anObserver [
-	observers := observers copyWith: anObserver
-]
-
-{ #category : #initialization }
-WeatherData >> setObservers: aCollection [
-	observers := aCollection.
-	^self
-]
-
-{ #category : #initialization }
-WeatherData >> setTemperature: aTemperatureFloat humidity: aHumidityFloat pressure: aPressureFloat [
-	temperature := aTemperatureFloat.
-	humidity := aHumidityFloat.
-	pressure := aPressureFloat.
-	observers do: [ :observer | 
-		observer
+WeatherData >> notifyObservers [
+	observers do: [ :each | 
+		each
 			updateTemperature: temperature
 			humidity: humidity
 			pressure: pressure ]
+]
+
+{ #category : #accessing }
+WeatherData >> pressure [ 
+	^ pressure
+]
+
+{ #category : #adding }
+WeatherData >> registerObserver: anObserver [
+	observers add: anObserver. 
+]
+
+{ #category : #accessing }
+WeatherData >> temperature [
+	^ temperature
+]
+
+{ #category : #'as yet unclassified' }
+WeatherData >> temperature: temperatureNumber humidity: humidityNumber pressure: pressureNumber [
+	temperature := temperatureNumber.
+	humidity := humidityNumber.
+	pressure := pressureNumber.
+	self notifyObservers
 ]
