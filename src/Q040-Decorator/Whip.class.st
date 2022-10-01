@@ -9,18 +9,18 @@ Class {
 }
 
 { #category : #'as yet unclassified' }
-Whip class >> cost: aNumber beverage: aBeverage [
-	^ self new setCost: aNumber beverage: aBeverage 
+Whip class >> cost: aNumber beverage: anObject [
+	^ self new setCost: aNumber beverage: anObject
 ]
 
 { #category : #accessing }
 Whip >> cost [
-	^ beverage cost + cost
+	^ cost + beverage cost
 ]
 
-{ #category : #initialization }
-Whip >> setCost: aNumber beverage: aBeverage [
-	cost := aNumber.
-	beverage := aBeverage.
+{ #category : #private }
+Whip >> setCost: aNumber beverage: anObject [
+	cost := aNumber .
+	beverage := anObject .
 	^ self
 ]

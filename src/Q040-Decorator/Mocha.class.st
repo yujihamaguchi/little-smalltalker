@@ -9,18 +9,18 @@ Class {
 }
 
 { #category : #'as yet unclassified' }
-Mocha class >> cost: aNumber beverage: aBeverage [
-	^ self new setCost: aNumber beverage: aBeverage 
+Mocha class >> cost: aNumber beverage: anObject [
+	^ self new setCost: aNumber beverage: anObject
 ]
 
 { #category : #accessing }
 Mocha >> cost [
-	^ beverage cost + cost
+	^ cost + beverage cost
 ]
 
-{ #category : #initialization }
-Mocha >> setCost: aNumber beverage: aBeverage [
-	cost := aNumber.
-	beverage := aBeverage.
+{ #category : #private }
+Mocha >> setCost: aNumber beverage: anObject [
+	cost := aNumber .
+	beverage := anObject .
 	^ self
 ]

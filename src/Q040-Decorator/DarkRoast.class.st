@@ -17,7 +17,7 @@ DarkRoast >> cost [
 	^ cost
 ]
 
-{ #category : #initialization }
+{ #category : #private }
 DarkRoast >> setCost: aNumber [
 	cost := aNumber.
 	^ self
