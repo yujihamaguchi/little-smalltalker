@@ -8,5 +8,5 @@ Class {
 SimpleSushiFactory >> createSushi: aSymbol [
 	^ #Ikura = aSymbol
 		  ifTrue: [ Ikura new ]
-		  ifFalse: [ Sushi new ]
+		  ifFalse: [ nil ]
 ]

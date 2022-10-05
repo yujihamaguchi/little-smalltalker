@@ -4,16 +4,12 @@ Class {
 	#instVars : [
 		'factory'
 	],
-	#classInstVars : [
-		'factory'
-	],
 	#category : #'Q051-Simple-Factory'
 }
 
-{ #category : #accessing }
+{ #category : #initialize }
 SushiStore class >> factory: aFactory [
-	^self new setFactory: aFactory
-	
+	^ self new setFactory: aFactory
 ]
 
 { #category : #'as yet unclassified' }
@@ -25,9 +21,8 @@ SushiStore >> orderSushi: aSymbol [
 	^ sushi
 ]
 
-{ #category : #initialization }
+{ #category : #private }
 SushiStore >> setFactory: aFactory [
 	factory := aFactory.
-	^self
-	
+	^ self
 ]

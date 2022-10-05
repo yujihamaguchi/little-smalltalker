@@ -9,15 +9,17 @@ Class {
 
 { #category : #accessing }
 Sushi >> box [
-	^'boxing sushi...'
+	Transcript show: 'boxed!!!'.
+	^ self
 ]
 
 { #category : #accessing }
 Sushi >> name [
-	^name
+	^ name
 ]
 
 { #category : #decoration }
 Sushi >> prepare [
-	^'preparing sushi...'
+	Transcript show: 'prepared!!!'.
+	^ self
 ]
