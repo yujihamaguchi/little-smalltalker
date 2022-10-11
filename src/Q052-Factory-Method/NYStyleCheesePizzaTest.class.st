@@ -6,12 +6,14 @@ Class {
 
 { #category : #tests }
 NYStyleCheesePizzaTest >> testPrepare [
-	| pizza name |
-	name := 'NewYork Style Cheese Pizza'.
-	pizza := NYStyleCheesePizza name: name.
+	| pizza |
+	pizza := NYStyleCheesePizza new initialize.
+	self assert: pizza name equals: 'NewYork Style Cheese Pizza'.
+	
 	pizza prepare.
-	self assert: pizza name equals: name.
 	self assert: pizza dough class equals: ThinCraftDough.
 	self assert: pizza sauce class equals: MarinaraSauce.
-	self assert: pizza toppings first class equals: NewYorkCheese.
+	self assert:
+		((pizza toppings collect: [ :each | each class ]) includes:
+			 NewYorkCheese)
 ]

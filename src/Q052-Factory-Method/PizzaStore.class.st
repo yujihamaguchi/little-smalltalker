@@ -4,18 +4,14 @@ Class {
 	#category : #'Q052-Factory-Method'
 }
 
-{ #category : #tests }
+{ #category : #'as yet unclassified' }
 PizzaStore >> createPizza: aSymbol [
-	^self subclassResponsibility 
+	^ self subclassResponsibility 
 ]
 
-{ #category : #tests }
+{ #category : #'as yet unclassified' }
 PizzaStore >> orderPizza: aSymbol [
 	| pizza |
 	pizza := self createPizza: aSymbol.
-	pizza prepare.
-	pizza bake.
-	pizza cut.	
-	pizza box.
-	^pizza
+	^ pizza prepare bake cut box
 ]

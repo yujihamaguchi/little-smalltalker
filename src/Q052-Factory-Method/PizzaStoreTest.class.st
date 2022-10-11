@@ -8,7 +8,7 @@ Class {
 PizzaStoreTest >> testOrderPizza [
 	| pizza store |
 	pizza := Pizza new.
-	pizza stub prepare willReturn: Any.
+	pizza stub prepare willReturn: pizza. "This step is necessary because prepare is an abstract method."
 	store := PizzaStore new.
 	(store stub createPizza: #Foo) willReturn: pizza.
 	self assert: (store orderPizza: #Foo) equals: pizza.
@@ -16,5 +16,5 @@ PizzaStoreTest >> testOrderPizza [
 	pizza should receive prepare once.
 	pizza should receive bake once.
 	pizza should receive cut once.
-	pizza should receive box once.
+	pizza should receive box once
 ]
