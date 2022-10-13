@@ -9,7 +9,7 @@ NYStyleCheesePizzaTest >> testPrepare [
 	| pizza |
 	pizza := NYStyleCheesePizza new initialize.
 	self assert: pizza name equals: 'NewYork Style Cheese Pizza'.
-	
+		
 	pizza prepare.
 	self assert: pizza dough class equals: ThinCraftDough.
 	self assert: pizza sauce class equals: MarinaraSauce.
