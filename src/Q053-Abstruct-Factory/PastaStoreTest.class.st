@@ -7,13 +7,11 @@ Class {
 { #category : #tests }
 PastaStoreTest >> testOrderPasta [
 	| pastaStore pasta |
-	pasta := Pasta factory: Any name: 'foo'.
+	pasta := Pasta new.
 	pasta stub prepare willReturn: Any.
-	pasta stub name willReturn: 'foo'.
 	pastaStore := PastaStore new.
 	(pastaStore stub createPasta: #Foo) willReturn: pasta.
-	self assert: (pastaStore orderPasta: #Foo) name equals: pasta name.
+	self assert: (pastaStore orderPasta: #Foo) equals: pasta.
 	(pastaStore should receive createPasta: #Foo) once.
-	pasta should receive prepare once.
-
+	pasta should receive prepare once
 ]

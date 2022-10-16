@@ -15,5 +15,5 @@ NYIngredientFactoryTest >> testCreateNoodle [
 NYIngredientFactoryTest >> testCreateSauce [
 	| factory |
 	factory := NYIngredientFactory new.
-	self assert: (factory createSauce class) equals: ChiliSauce .
+	self assert: factory createSauce class equals: ChiliSauce
 ]

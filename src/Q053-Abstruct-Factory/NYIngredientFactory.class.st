@@ -11,5 +11,5 @@ NYIngredientFactory >> createNoodle [
 
 { #category : #'as yet unclassified' }
 NYIngredientFactory >> createSauce [
-	^ ChiliSauce	 new
+	^ ChiliSauce new
 ]

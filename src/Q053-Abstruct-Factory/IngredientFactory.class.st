@@ -6,10 +6,10 @@ Class {
 
 { #category : #'as yet unclassified' }
 IngredientFactory >> createNoodle [
-	^ self subclassResponsibility
+	^ self subclassResponsibility 
 ]
 
 { #category : #'as yet unclassified' }
 IngredientFactory >> createSauce [
-	^ self subclassResponsibility
+	^ self subclassResponsibility 
 ]

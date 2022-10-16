@@ -6,8 +6,7 @@ Class {
 
 { #category : #tests }
 NYPastaStoreTest >> testCreatePasta [
-	| nyPastaStore nyStyleCheesePasta |
-	nyStyleCheesePasta := NYStyleCheesePasta factory: Any name: 'NewYork Style Cheese Pasta'.
+	| nyPastaStore |
 	nyPastaStore := NYPastaStore new.
-	self assert: (nyPastaStore createPasta: #Cheese) equals: nyStyleCheesePasta.
+	self assert: (nyPastaStore createPasta: #Cheese) class equals: NYStyleCheesePasta.
 ]
