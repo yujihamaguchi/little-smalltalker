@@ -12,5 +12,5 @@ SingletonTest >> testCurrent [
 	refer: https://www.wikiwand.com/ja/Smalltalk"
 	object1 := Singleton current.
 	object2 := Singleton current.
-	self assert: object1 identicalTo: object2.
+	self assert: object1 identicalTo: object2
 ]
