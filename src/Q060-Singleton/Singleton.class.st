@@ -9,6 +9,7 @@ Class {
 
 { #category : #accessing }
 Singleton class >> current [
-	^UniqueInstance ifNil: [ UniqueInstance := self new ]
+	UniqueInstance ifNil: [ UniqueInstance := self new ].
+	^ UniqueInstance
 
 ]
