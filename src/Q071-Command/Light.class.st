@@ -5,11 +5,5 @@ Class {
 }
 
 { #category : #'as yet unclassified' }
-Light >> off [
-	^ self
-]
-
-{ #category : #'as yet unclassified' }
 Light >> on [
-	^ self
 ]

@@ -9,10 +9,7 @@ Class {
 
 { #category : #accessing }
 Command class >> receiver: aReceiver [
-	| command |
-	command := self new.
-	command setReceiver: aReceiver.
-	^ self
+	^ self new setReceiver: aReceiver
 ]
 
 { #category : #execution }

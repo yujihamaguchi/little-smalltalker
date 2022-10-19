@@ -2,17 +2,18 @@ Class {
 	#name : #SimpleRemoteControl,
 	#superclass : #Object,
 	#instVars : [
-		'slot'
+		'command'
 	],
 	#category : #'Q071-Command'
 }
 
 { #category : #'as yet unclassified' }
 SimpleRemoteControl >> buttonWasPressed [
-	slot execute
+	command execute.
 ]
 
 { #category : #initialization }
-SimpleRemoteControl >> command: aCommand [
-	slot := aCommand
+SimpleRemoteControl >> setCommand: aCommand [
+	command := aCommand.
+	^ self
 ]
