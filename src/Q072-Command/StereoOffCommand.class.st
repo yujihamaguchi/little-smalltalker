@@ -6,5 +6,4 @@ Class {
 
 { #category : #execution }
 StereoOffCommand >> execute [
-	^ self 
 ]

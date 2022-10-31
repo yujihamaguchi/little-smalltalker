@@ -6,5 +6,5 @@ Class {
 
 { #category : #execution }
 FanOffCommand >> execute [
-	^ self
+
 ]

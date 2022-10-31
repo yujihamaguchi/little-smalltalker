@@ -7,7 +7,7 @@ Class {
 { #category : #tests }
 RemoteControlTest >> testButtonWasPushed [
 	| remote stereoOnCommand stereoOffCommand fanOnCommand fanOffCommand |
-	remote := RemoteControl new.	
+	remote := RemoteControl new.
 
 	fanOnCommand := FanOnCommand receiver: Any.
 	fanOnCommand stub execute willReturnYourself.
@@ -19,7 +19,10 @@ RemoteControlTest >> testButtonWasPushed [
 	stereoOnCommand stub execute willReturnYourself.
 	stereoOffCommand := StereoOffCommand receiver: Any.
 	stereoOffCommand stub execute willReturnYourself.
-	remote slot: 1 onCommand: stereoOnCommand offCommand: stereoOffCommand.
+	remote
+		slot: 1
+		onCommand: stereoOnCommand
+		offCommand: stereoOffCommand.
 
 	remote onButtonWasPushed: 0.
 	remote offButtonWasPushed: 0.
@@ -30,8 +33,7 @@ RemoteControlTest >> testButtonWasPushed [
 	remote onButtonWasPushed: 1.
 	remote undoButtonPushed.
 	remote onButtonWasPushed: 1.
-	remote offButtonWasPushed: 1.	
+	remote offButtonWasPushed: 1.
 	stereoOnCommand should receive execute twice.
 	stereoOffCommand should receive execute twice.
-	
 ]

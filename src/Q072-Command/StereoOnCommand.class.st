@@ -22,5 +22,5 @@ StereoOnCommand >> execute [
 { #category : #initialization }
 StereoOnCommand >> setStereo: aStereo [
 	stereo := aStereo.
-	^ self
+	^self
 ]

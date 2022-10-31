@@ -8,8 +8,8 @@ Class {
 FanOnCommandTest >> testExecute [
 	| onCommand fan |
 	fan := Fan new.
-	fan stub on.
+	fan stub on willReturnYourself.
 	onCommand := FanOnCommand fan: fan.
 	onCommand execute.
-	fan should receive on once.
+	fan should receive on once
 ]

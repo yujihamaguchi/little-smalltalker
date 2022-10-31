@@ -2,9 +2,10 @@ Class {
 	#name : #RemoteControl,
 	#superclass : #Object,
 	#instVars : [
+		'toggleButtons',
+		'undoCommand',
 		'onCommands',
-		'offCommands',
-		'undoCommand'
+		'offCommands'
 	],
 	#category : #'Q072-Command'
 }
@@ -34,11 +35,11 @@ RemoteControl >> onButtonWasPushed: aNumber [
 
 { #category : #'as yet unclassified' }
 RemoteControl >> slot: aNumber onCommand: anOnCommand offCommand: anOffCommand [
-	onCommands at: aNumber put: anOnCommand.
-	offCommands at: aNumber put: anOffCommand
+	onCommands at: aNumber put:	anOnCommand.
+	offCommands at: aNumber put: anOffCommand.
 ]
 
 { #category : #'as yet unclassified' }
-RemoteControl >> undoButtonPushed [
+RemoteControl >> undoButtonPushed [ 
 	undoCommand execute.
 ]

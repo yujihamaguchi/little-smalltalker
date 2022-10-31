@@ -9,7 +9,7 @@ Class {
 
 { #category : #'as yet unclassified' }
 FanOnCommand class >> fan: aFan [
-	^self new setFan: aFan
+	^ self new setFan: aFan
 ]
 
 { #category : #execution }

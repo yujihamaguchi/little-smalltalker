@@ -11,13 +11,12 @@ Class {
 StereoOnCommandTest >> testExecute [
 	| onCommand |
 	stereo := Stereo new.
-	stereo stub on.
-	stereo stub setCD.
-	stereo stub setVolume: 11.
+	stereo stub on willReturnYourself.
+	stereo stub setCD willReturnYourself.
+	(stereo stub setVolume: 11) willReturnYourself .
 	onCommand := StereoOnCommand stereo: stereo.
 	onCommand execute.
 	stereo should receive on once.
 	stereo should receive setCD once.
-	(stereo should receive setVolume: 11) once.
-	
+	(stereo should receive setVolume: 11) once
 ]
