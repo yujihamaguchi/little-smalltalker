@@ -8,7 +8,7 @@ Class {
 LightOnCommandTest >> testExecute [
 	| lightOnCommand light |
 	light := Light new.
-	light stub.
+	light stub on willReturnYourself.
 	lightOnCommand := LightOnCommand receiver: light.
 	lightOnCommand execute.
 	light should receive on.

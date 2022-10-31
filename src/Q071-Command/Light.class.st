@@ -3,7 +3,3 @@ Class {
 	#superclass : #Object,
 	#category : #'Q071-Command'
 }
-
-{ #category : #'as yet unclassified' }
-Light >> on [
-]
