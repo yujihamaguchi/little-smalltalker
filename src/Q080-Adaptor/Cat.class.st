@@ -6,5 +6,5 @@ Class {
 
 { #category : #'as yet unclassified' }
 Cat >> meow [
-	^ self subclassResponsibility  
+	^ self subclassResponsibility 
 ]
