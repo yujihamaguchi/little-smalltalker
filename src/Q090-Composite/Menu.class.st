@@ -4,31 +4,35 @@ Class {
 	#instVars : [
 		'name',
 		'description',
-		'menuComponents'
+		'items'
 	],
 	#category : #'Q090-Composite'
 }
 
 { #category : #'as yet unclassified' }
-Menu class >> name: aName description: aDescription [
-	^ self new setName: aName description: aDescription
+Menu class >> name: aNameString description: aDescriptionString [
+	^ self new setName: aNameString description: aDescriptionString
 ]
 
 { #category : #adding }
-Menu >> add: aMenuComponent [
-	menuComponents add: aMenuComponent.
+Menu >> add: anItem [
+	items add: anItem.
 ]
 
 { #category : #printing }
 Menu >> print [
-	^ '<' , name , ', ' , description , Character cr asString
-	  , (menuComponents flatCollect: [ :c | c print ]) , '>'
+	^ '<', name, ', ', description, String cr, (items flatCollect: [ :item | item print ])	, '>'
+]
+
+{ #category : #removing }
+Menu >> remove: aComponent [
+  items := items reject: [ :each | aComponent = each ].
 ]
 
 { #category : #initialization }
-Menu >> setName: aName description: aDescription [
-	menuComponents := OrderedCollection new.
-	name := aName.
-	description := aDescription.
+Menu >> setName: aNameString description: aDescriptionString [
+	name := aNameString.
+	description := aDescriptionString.
+	items := OrderedCollection new.
 	^ self
 ]

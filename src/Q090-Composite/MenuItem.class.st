@@ -10,19 +10,28 @@ Class {
 }
 
 { #category : #'as yet unclassified' }
-MenuItem class >> name: aName description: aDescription price: aPrice [
-	^ self new setName: aName description: aDescription price: aPrice
+MenuItem class >> name: aNameString description: aDescriptionString price: aDecimal [
+	^ self new setName: aNameString description: aDescriptionString price: aDecimal
+]
+
+{ #category : #adding }
+MenuItem >> add: aMenuComponent [
+
 ]
 
 { #category : #printing }
 MenuItem >> print [
-	^ '-- ', name, ', ', description, ', ', price asString, Character cr asString
+	^ '-- ', name, ', ', description, ', ', price asString, String cr
+]
+
+{ #category : #removing }
+MenuItem >> remove: aComponent [
 ]
 
 { #category : #initialization }
-MenuItem >> setName: aName description: aDescription price: aPrice [
-	name := aName.
-	description := aDescription .
-	price := aPrice.
+MenuItem >> setName: aNameString description: aDescriptionString price: aDecimal [
+	name := aNameString.
+	description := aDescriptionString.
+	price := aDecimal.
 	^ self
 ]

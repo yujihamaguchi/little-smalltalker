@@ -13,3 +13,8 @@ MenuComponent >> add: aMenuComponent [
 MenuComponent >> print [
 	^ self subclassResponsibility 
 ]
+
+{ #category : #removing }
+MenuComponent >> remove: aComponent [
+	^ self subclassResponsibility 
+]
