@@ -2,8 +2,11 @@ Class {
 	#name : #GumballMachine,
 	#superclass : #Object,
 	#instVars : [
-		'remain',
-		'state'
+		'state',
+		'count',
+		'noCoinState',
+		'hasCoinState',
+		'soldOutState'
 	],
 	#category : #'Q100-State'
 }
@@ -12,37 +15,61 @@ Class {
 GumballMachine class >> initialize [
 	| machine |
 	machine := self new.
-	^ machine setState: (NoCoin new setMachine: machine) remain: 5
+	^ machine setCount: 5.
 ]
 
-{ #category : #'as yet unclassified' }
-GumballMachine >> dispense [
-	remain := remain - 1.
+{ #category : #accessing }
+GumballMachine >> count [
+	^ count
 ]
 
-{ #category : #'as yet unclassified' }
-GumballMachine >> ejectCoin [
-	self state ejectCoin.
+{ #category : #accessing }
+GumballMachine >> count: aNumber [
+	count := aNumber.
+	
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #action }
+GumballMachine >> ejectCoin [ 
+	state ejectCoin.
+]
+
+{ #category : #accessing }
+GumballMachine >> hasCoinState [
+	^ hasCoinState 
+]
+
+{ #category : #action }
 GumballMachine >> insertCoin [
-	self state insertCoin 
+	state insertCoin.
+]
+
+{ #category : #accessing }
+GumballMachine >> noCoinState [
+	^ noCoinState 
 ]
 
 { #category : #'as yet unclassified' }
-GumballMachine >> remain [
-	^ remain
+GumballMachine >> releaseBall [
+	count := count - 1.
 ]
 
 { #category : #initialization }
-GumballMachine >> setState: aString remain: aNumber [
-	state := aString.
-	remain := aNumber.
+GumballMachine >> setCount: aNumber [
+	count := aNumber.
+	noCoinState := NoCoin new setMachine: self.
+	hasCoinState := HasCoin new setMachine: self.
+	soldOutState := SoldOut new setMachine: self.
+	state := 	noCoinState.
 	^ self
 ]
 
-{ #category : #'accessing - structure variables' }
+{ #category : #accessing }
+GumballMachine >> soldOutState [
+	^ soldOutState 
+]
+
+{ #category : #accessing }
 GumballMachine >> state [
 	^ state
 ]
@@ -52,7 +79,7 @@ GumballMachine >> state: aState [
 	state := aState.
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #action }
 GumballMachine >> turnCrank [
-	self state turnCrank 
+	state turnCrank.
 ]

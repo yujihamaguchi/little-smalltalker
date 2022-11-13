@@ -4,17 +4,14 @@ Class {
 	#category : #'Q100-State'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : #action }
 SoldOut >> ejectCoin [
-	^ self 
 ]
 
-{ #category : #'as yet unclassified' }
-SoldOut >> insertCoin [ 
-	^ self 
+{ #category : #action }
+SoldOut >> insertCoin [
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #action }
 SoldOut >> turnCrank [
-	^ self 
 ]

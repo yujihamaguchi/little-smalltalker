@@ -7,28 +7,22 @@ Class {
 	#category : #'Q100-State'
 }
 
-{ #category : #'as yet unclassified' }
-State class >> machine: aMachine [
-	^ self new setMachine: aMachine
-]
-
-{ #category : #'as yet unclassified' }
+{ #category : #action }
 State >> ejectCoin [
 	^ self subclassResponsibility 
 ]
 
-{ #category : #'as yet unclassified' }
-State >> insertCoin [ 
+{ #category : #action }
+State >> insertCoin [
 	^ self subclassResponsibility 
 ]
 
 { #category : #initialization }
 State >> setMachine: aMachine [
 	machine := aMachine.
-	^ self
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #action }
 State >> turnCrank [
 	^ self subclassResponsibility 
 ]

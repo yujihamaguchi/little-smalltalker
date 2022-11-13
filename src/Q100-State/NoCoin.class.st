@@ -4,17 +4,15 @@ Class {
 	#category : #'Q100-State'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : #action }
 NoCoin >> ejectCoin [
-	^ self 
 ]
 
-{ #category : #'as yet unclassified' }
-NoCoin >> insertCoin [ 
-	machine state: (HasCoin new setMachine: machine).
+{ #category : #action }
+NoCoin >> insertCoin [
+	machine state: machine hasCoinState.
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #action }
 NoCoin >> turnCrank [
-	^ self
 ]
