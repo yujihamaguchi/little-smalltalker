@@ -8,11 +8,11 @@ Class {
 SushiStoreTest >> testOrderSushi [
 	| sushi simpleSushiFactory sushiStore |
 	sushi := Sushi new.
-	sushi stub name willReturn: 'Foo'.
+	sushi stub.
 	simpleSushiFactory := SimpleSushiFactory new.
 	(simpleSushiFactory stub createSushi: #Foo) willReturn: sushi.
 	sushiStore := SushiStore factory: simpleSushiFactory.
-	self assert: (sushiStore orderSushi: #Foo) name equals: 'Foo'.
+	self assert: (sushiStore orderSushi: #Foo) equals: sushi.
 	(simpleSushiFactory should receive createSushi: #Foo) once.
 	sushi should receive prepare once.
 	sushi should receive box once
