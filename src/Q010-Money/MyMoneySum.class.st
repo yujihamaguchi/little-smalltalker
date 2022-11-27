@@ -8,19 +8,19 @@ Class {
 }
 
 { #category : #arithmetic }
-MyMoneySum >> + aMoney [
-	^ aMoney addMoneySum: self
+MyMoneySum >> + aMoneyLike [
+	^ aMoneyLike addAll: self
 ]
 
 { #category : #adding }
-MyMoneySum >> addMoney: aMoney [
-	monies add: aMoney.
+MyMoneySum >> add: aMyMoney [
+	monies add: aMyMoney.
 	^ self
 ]
 
 { #category : #adding }
-MyMoneySum >> addMoneySum: aMoneySum [
-	monies addAll: aMoneySum monies.
+MyMoneySum >> addAll: aMyMoneySum [
+	monies addAll: aMyMoneySum monies.
 	^ self
 ]
 
@@ -30,12 +30,13 @@ MyMoneySum >> initialize [
 	^ self
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #accessing }
 MyMoneySum >> monies [
-	^ monies 
+	^ monies
 ]
 
 { #category : #accessing }
 MyMoneySum >> monies: aCollection [
-	monies := aCollection
+	monies := aCollection.
+	^ self
 ]
