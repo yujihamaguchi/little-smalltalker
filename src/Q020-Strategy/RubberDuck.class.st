@@ -5,6 +5,6 @@ Class {
 }
 
 { #category : #'as yet unclassified' }
-RubberDuck >> swim [ 
+RubberDuck >> swim [
 	^ 'floating'
 ]

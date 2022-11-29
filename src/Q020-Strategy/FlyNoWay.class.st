@@ -1,10 +1,10 @@
 Class {
 	#name : #FlyNoWay,
-	#superclass : #Object,
+	#superclass : #FlyBehavier,
 	#category : #'Q020-Strategy'
 }
 
-{ #category : #'as yet unclassified' }
-FlyNoWay >> fly [
+{ #category : #'undo - undo' }
+FlyNoWay >> do [
 	^ 'no way'
 ]
