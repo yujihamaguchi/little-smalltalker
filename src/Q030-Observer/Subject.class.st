@@ -1,15 +1,24 @@
 Class {
 	#name : #Subject,
 	#superclass : #Object,
+	#instVars : [
+		'observers'
+	],
 	#category : #'Q030-Observer'
 }
 
-{ #category : #notifying }
-Subject >> notifyObservers [
-	^ self subclassResponsibility
+{ #category : #adding }
+Subject >> addObserver: anObserver [
+	observers add: anObserver.
 ]
 
-{ #category : #'observers - experimental' }
-Subject >> registerObserver: anObserver [
-	^ self subclassResponsibility
+{ #category : #initialization }
+Subject >> initialize [ 
+	observers := OrderedCollection new.
+	^ self
+]
+
+{ #category : #'as yet unclassified' }
+Subject >> notify [
+	observers do: [ :each | each update: self ].
 ]
