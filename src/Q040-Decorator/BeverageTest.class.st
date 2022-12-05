@@ -6,11 +6,16 @@ Class {
 
 { #category : #tests }
 BeverageTest >> testBeverage [
-	| darkRoast mocha whip |
-	darkRoast := DarkRoast cost: 3.
-	mocha := Mocha cost: 2 beverage: darkRoast.
-	mocha := Mocha cost: 2 beverage: mocha.
-	self assert: mocha cost equals: 7.
-	whip := Whip cost: 1 beverage: mocha.
-	self assert: whip cost equals: 8
+	| darkRoastBeverage chocolateToppedBeverage doubleChocolateToppedBeverage whipToppedBeverage |
+	darkRoastBeverage := DarkRoast cost: 3.
+	self assert: darkRoastBeverage cost equals: 3.
+	
+	chocolateToppedBeverage := Chocolate cost: 2 beverage: darkRoastBeverage.
+	self assert: chocolateToppedBeverage cost equals: 5.
+
+	doubleChocolateToppedBeverage := Chocolate cost: 2 beverage: chocolateToppedBeverage.
+	self assert: doubleChocolateToppedBeverage cost equals: 7.
+
+	whipToppedBeverage := Whip cost: 1 beverage: doubleChocolateToppedBeverage.
+	self assert: whipToppedBeverage cost equals: 8
 ]

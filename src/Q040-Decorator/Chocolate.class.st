@@ -1,5 +1,5 @@
 Class {
-	#name : #Whip,
+	#name : #Chocolate,
 	#superclass : #Topping,
 	#category : #'Q040-Decorator'
 }
