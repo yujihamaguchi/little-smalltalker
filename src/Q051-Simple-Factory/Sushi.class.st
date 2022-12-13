@@ -6,8 +6,10 @@ Class {
 
 { #category : #accessing }
 Sushi >> box [
+	^ self
 ]
 
 { #category : #decoration }
 Sushi >> prepare [
+	^ self
 ]

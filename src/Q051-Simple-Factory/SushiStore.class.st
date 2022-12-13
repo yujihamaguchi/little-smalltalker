@@ -7,7 +7,7 @@ Class {
 	#category : #'Q051-Simple-Factory'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : #initialize }
 SushiStore class >> factory: aFactory [
 	^ self new setFactory: aFactory
 ]
@@ -17,6 +17,7 @@ SushiStore >> orderSushi: aSymbol [
 	| sushi |
 	sushi := factory createSushi: aSymbol.
 	^ sushi prepare box
+
 ]
 
 { #category : #initialization }
