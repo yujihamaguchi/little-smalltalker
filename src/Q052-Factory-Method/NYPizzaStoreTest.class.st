@@ -10,5 +10,6 @@ NYPizzaStoreTest >> testCreatePizza [
 	nyPizzaStore := NYPizzaStore new.
 	self
 		assert: (nyPizzaStore createPizza: #Cheese) class
-		equals: NYStyleCheesePizza
+		equals: NYStyleCheesePizza.
+	self assert: (nyPizzaStore createPizza: #Karasumi) equals: nil
 ]

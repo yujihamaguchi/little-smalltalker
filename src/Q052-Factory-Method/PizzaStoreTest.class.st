@@ -6,15 +6,25 @@ Class {
 
 { #category : #tests }
 PizzaStoreTest >> testOrderPizza [
-	| pizza store |
-	pizza := Pizza new.
-	pizza stub prepare willReturn: pizza. "This step is necessary because prepare is an abstract method."
-	store := PizzaStore new.
-	(store stub createPizza: #Foo) willReturn: pizza.
-	self assert: (store orderPizza: #Foo) equals: pizza.
-	(store should receive createPizza: #Foo) once.
+	| pizza target bakedPizza cutPizza boxedPizza preparedPizza |
+	pizza := Mock new.
+	preparedPizza := Mock new.
+	bakedPizza := Mock new.
+	cutPizza := Mock new.
+	boxedPizza := Mock new.
+
+	target := PizzaStore new.
+	(target stub createPizza: #Foo) willReturn: pizza.
+	pizza stub prepare willReturn: preparedPizza.
+	preparedPizza stub bake willReturn: bakedPizza.
+	bakedPizza stub cut willReturn: cutPizza.
+	cutPizza stub box willReturn: boxedPizza.
+
+	self assert: (target orderPizza: #Foo) equals: boxedPizza.
+
+	(target should receive createPizza: #Foo) once.
 	pizza should receive prepare once.
-	pizza should receive bake once.
-	pizza should receive cut once.
-	pizza should receive box once
+	preparedPizza should receive bake once.
+	bakedPizza should receive cut once.
+	cutPizza should receive box once
 ]

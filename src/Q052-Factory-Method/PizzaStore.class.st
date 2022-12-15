@@ -14,4 +14,5 @@ PizzaStore >> orderPizza: aSymbol [
 	| pizza |
 	pizza := self createPizza: aSymbol.
 	^ pizza prepare bake cut box
+	
 ]
