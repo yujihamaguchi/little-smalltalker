@@ -1,15 +1,15 @@
 Class {
-	#name : #NYIngredientFactory,
+	#name : #ChicagoIngredientFactory,
 	#superclass : #IngredientFactory,
 	#category : #'Q053-Abstruct-Factory'
 }
 
 { #category : #'as yet unclassified' }
-NYIngredientFactory >> createNoodle [ 
-	^ ThinNoodle new
+ChicagoIngredientFactory >> createNoodle [ 
+	^ ThickNoodle new
 ]
 
 { #category : #'as yet unclassified' }
-NYIngredientFactory >> createSauce [
-	^ ChiliSauce new
+ChicagoIngredientFactory >> createSauce [
+	^ CheeseSauce new
 ]

@@ -1,12 +1,12 @@
 Class {
-	#name : #NYPastaStore,
+	#name : #ChicagoPastaStore,
 	#superclass : #PastaStore,
 	#category : #'Q053-Abstruct-Factory'
 }
 
 { #category : #'as yet unclassified' }
-NYPastaStore >> createPasta: aSymbol [
+ChicagoPastaStore >> createPasta: aSymbol [
 	^ #Cheese = aSymbol
-		  ifTrue: [ NYStyleCheesePasta new ]
+		  ifTrue: [ ChicagoCheesePasta new ]
 		  ifFalse: [ nil ]
 ]

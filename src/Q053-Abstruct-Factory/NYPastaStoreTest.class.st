@@ -6,7 +6,10 @@ Class {
 
 { #category : #tests }
 NYPastaStoreTest >> testCreatePasta [
-	| nyPastaStore |
-	nyPastaStore := NYPastaStore new.
-	self assert: (nyPastaStore createPasta: #Cheese) class equals: NYStyleCheesePasta.
+	| target |
+	target := NYPastaStore new.
+	self
+		assert: (target createPasta: #Cheese) class
+		equals: NYStyleCheesePasta.
+	self assert: (target createPasta: #Karasumi) equals: nil
 ]

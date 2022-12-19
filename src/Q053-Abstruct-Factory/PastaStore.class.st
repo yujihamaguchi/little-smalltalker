@@ -13,6 +13,5 @@ PastaStore >> createPasta: aSymbol [
 PastaStore >> orderPasta: aSymbol [
 	| pasta |
 	pasta := self createPasta: aSymbol.
-	pasta prepare.
-	^ pasta
+	^pasta prepare
 ]
