@@ -13,7 +13,8 @@ ChicagoIngredientFactoryTest >> testCreateNoodle [
 
 { #category : #tests }
 ChicagoIngredientFactoryTest >> testCreateSauce [
+
 	| target |
 	target := ChicagoIngredientFactory new.
-	self assert: (target createSauce) class equals: CheeseSauce.
+	self assert: target createSauce class equals: CheeseSauce
 ]
