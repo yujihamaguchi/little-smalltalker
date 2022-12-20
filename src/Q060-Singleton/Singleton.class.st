@@ -2,14 +2,14 @@ Class {
 	#name : #Singleton,
 	#superclass : #Object,
 	#classVars : [
-		'uniqueInstance'
+		'current'
 	],
 	#category : #'Q060-Singleton'
 }
 
 { #category : #accessing }
 Singleton class >> current [
-	uniqueInstance ifNil: [ uniqueInstance := self new ].
-	^ uniqueInstance
+	current ifNil: [ current := self new ].
+	^ current
 
 ]
