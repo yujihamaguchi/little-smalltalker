@@ -9,7 +9,7 @@ Class {
 
 { #category : #accessing }
 Singleton class >> current [
-	current ifNil: [ current := self new ].
-	^ current
-
+	^ current ifNil: [ 
+		  current := self new.
+		  current ]
 ]
