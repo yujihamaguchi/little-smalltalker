@@ -6,12 +6,14 @@ Class {
 
 { #category : #tests }
 SimpleRemoteControlTest >> testButtonWasPressed [
-	| remote command |
-	command := LightOnCommand receiver: Any.
-	command stub execute willReturn: Any.
-	remote := SimpleRemoteControl new.
-	remote setCommand: command.
-	remote buttonWasPressed.
-	command should receive execute.
-		
+
+	| target command |
+	command := Mock new.
+
+	target := SimpleRemoteControl new.
+	target setCommand: command.
+
+	target buttonWasPressed.
+
+	command should receive execute
 ]

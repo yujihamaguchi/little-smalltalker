@@ -15,5 +15,4 @@ SimpleRemoteControl >> buttonWasPressed [
 { #category : #initialization }
 SimpleRemoteControl >> setCommand: aCommand [
 	command := aCommand.
-	^ self
 ]

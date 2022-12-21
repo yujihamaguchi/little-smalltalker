@@ -6,10 +6,13 @@ Class {
 
 { #category : #tests }
 LightOnCommandTest >> testExecute [
+
 	| lightOnCommand light |
-	light := Light new.
-	light stub on willReturnYourself.
+	light := Mock new.
+
 	lightOnCommand := LightOnCommand receiver: light.
+
 	lightOnCommand execute.
-	light should receive on.
+
+	light should receive on
 ]
