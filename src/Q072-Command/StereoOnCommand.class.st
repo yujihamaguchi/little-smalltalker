@@ -1,6 +1,6 @@
 Class {
 	#name : #StereoOnCommand,
-	#superclass : #Command,
+	#superclass : #Object,
 	#instVars : [
 		'stereo'
 	],
@@ -22,5 +22,5 @@ StereoOnCommand >> execute [
 { #category : #initialization }
 StereoOnCommand >> setStereo: aStereo [
 	stereo := aStereo.
-	^self
+	^ self
 ]

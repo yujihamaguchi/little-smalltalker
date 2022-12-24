@@ -2,7 +2,7 @@ Class {
 	#name : #RemoteControl,
 	#superclass : #Object,
 	#instVars : [
-		'toggleButtons',
+		'slot',
 		'undoCommand',
 		'onCommands',
 		'offCommands'
@@ -12,18 +12,19 @@ Class {
 
 { #category : #'instance creation' }
 RemoteControl class >> new [
-	^ self basicNew initialize
+	^ super basicNew initialize
 ]
 
 { #category : #initialization }
 RemoteControl >> initialize [
 	onCommands := Dictionary new.
 	offCommands := Dictionary new.
+	^ self
 ]
 
 { #category : #'as yet unclassified' }
 RemoteControl >> offButtonWasPushed: aNumber [
-	(offCommands at: aNumber) execute.
+	(offCommands at: 0) execute.
 	undoCommand := onCommands at: aNumber.
 ]
 
@@ -33,13 +34,14 @@ RemoteControl >> onButtonWasPushed: aNumber [
 	undoCommand := offCommands at: aNumber.
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #initialization }
 RemoteControl >> slot: aNumber onCommand: anOnCommand offCommand: anOffCommand [
-	onCommands at: aNumber put:	anOnCommand.
+	onCommands at: aNumber put: anOnCommand.
 	offCommands at: aNumber put: anOffCommand.
+	^ self
 ]
 
 { #category : #'as yet unclassified' }
-RemoteControl >> undoButtonPushed [ 
+RemoteControl >> undoButtonPushed [
 	undoCommand execute.
 ]

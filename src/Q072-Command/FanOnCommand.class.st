@@ -1,6 +1,6 @@
 Class {
 	#name : #FanOnCommand,
-	#superclass : #Command,
+	#superclass : #Object,
 	#instVars : [
 		'fan'
 	],

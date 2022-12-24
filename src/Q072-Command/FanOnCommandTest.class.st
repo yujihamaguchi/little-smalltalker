@@ -6,10 +6,11 @@ Class {
 
 { #category : #tests }
 FanOnCommandTest >> testExecute [
-	| onCommand fan |
-	fan := Fan new.
-	fan stub on willReturnYourself.
-	onCommand := FanOnCommand fan: fan.
-	onCommand execute.
+	| target fan |
+	fan := Mock new.
+	target := FanOnCommand fan: fan.
+
+	target execute.
+	
 	fan should receive on once
 ]
