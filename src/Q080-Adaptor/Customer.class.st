@@ -1,10 +1,10 @@
 Class {
-	#name : #Cat,
+	#name : #Customer,
 	#superclass : #Object,
 	#category : #'Q080-Adaptor'
 }
 
 { #category : #'as yet unclassified' }
-Cat >> meow [
+Customer >> arrivalDate [
 	^ self subclassResponsibility 
 ]
