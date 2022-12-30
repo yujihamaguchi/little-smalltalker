@@ -4,20 +4,18 @@ Class {
 	#category : #'Q100-State'
 }
 
-{ #category : #action }
-HasCoin >> ejectCoin [
-	machine state: machine noCoinState.
-
+{ #category : #'as yet unclassified' }
+HasCoin >> ejectCoin: aMachine [
+	aMachine state: NoCoin new.
 ]
 
-{ #category : #action }
-HasCoin >> insertCoin [
+{ #category : #'as yet unclassified' }
+HasCoin >> insertCoin: aMachine [
 ]
 
-{ #category : #action }
-HasCoin >> turnCrank [
-	machine releaseBall.
-	machine count = 0
-		ifTrue: [ machine state: machine soldOutState ]
-		ifFalse: [ machine state: machine noCoinState ].
+{ #category : #accessing }
+HasCoin >> turnCrank: aMachine [
+	aMachine dispense.
+	aMachine state: (aMachine count = 0 ifTrue: [ SoldOut new  ] ifFalse: [ NoCoin new ]).
+
 ]

@@ -1,28 +1,20 @@
 Class {
 	#name : #State,
 	#superclass : #Object,
-	#instVars : [
-		'machine'
-	],
 	#category : #'Q100-State'
 }
 
-{ #category : #action }
-State >> ejectCoin [
+{ #category : #'as yet unclassified' }
+State >> ejectCoin: aMachine [
 	^ self subclassResponsibility 
 ]
 
-{ #category : #action }
-State >> insertCoin [
+{ #category : #'as yet unclassified' }
+State >> insertCoin: aMachine [
 	^ self subclassResponsibility 
 ]
 
-{ #category : #initialization }
-State >> setMachine: aMachine [
-	machine := aMachine.
-]
-
-{ #category : #action }
-State >> turnCrank [
+{ #category : #accessing }
+State >> turnCrank: aMachine [
 	^ self subclassResponsibility 
 ]
