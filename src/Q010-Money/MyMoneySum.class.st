@@ -8,35 +8,41 @@ Class {
 }
 
 { #category : #arithmetic }
-MyMoneySum >> + aMoneyLike [
-	^ aMoneyLike addAll: self
+MyMoneySum >> + aMoney [
+	^ aMoney addMoneySum: self
+]
+
+{ #category : #comparing }
+MyMoneySum >> = aMoneySum [
+	^ self monies = aMoneySum monies
 ]
 
 { #category : #adding }
-MyMoneySum >> add: aMyMoney [
-	monies add: aMyMoney.
+MyMoneySum >> addMoney: aMoney [
+	monies add: aMoney.
 	^ self
 ]
 
 { #category : #adding }
-MyMoneySum >> addAll: aMyMoneySum [
-	monies addAll: aMyMoneySum monies.
+MyMoneySum >> addMoneySum: aMoneySum [
+	monies addAll: aMoneySum monies.
 	^ self
 ]
 
 { #category : #initialization }
-MyMoneySum >> initialize [
-	monies := OrderedCollection new.
+MyMoneySum >> initialize [ 
+	monies := Bag new.
 	^ self
 ]
 
 { #category : #accessing }
 MyMoneySum >> monies [
+
 	^ monies
 ]
 
 { #category : #accessing }
 MyMoneySum >> monies: aCollection [
-	monies := aCollection.
-	^ self
+
+	monies := aCollection
 ]
