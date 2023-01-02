@@ -4,7 +4,7 @@ Class {
 	#category : #'Q020-Strategy'
 }
 
-{ #category : #'undo - undo' }
-FlyWithWings >> do [
+{ #category : #'as yet unclassified' }
+FlyWithWings >> perform [
 	^ 'flying'
 ]

@@ -6,6 +6,7 @@ Class {
 
 { #category : #tests }
 DuckTest >> test001Swim [
+
 	| duck mallardDuck rubberDuck |
 	duck := Duck new.
 	self assert: duck swim equals: 'swimming'.
@@ -19,6 +20,7 @@ DuckTest >> test001Swim [
 
 { #category : #tests }
 DuckTest >> test002Fly [
+
 	| duck flyWithWings flyNoWay rubberDuck |
 	flyWithWings := FlyWithWings new.
 	duck := Duck flyBehavier: flyWithWings.

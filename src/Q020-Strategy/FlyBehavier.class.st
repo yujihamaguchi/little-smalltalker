@@ -4,7 +4,7 @@ Class {
 	#category : #'Q020-Strategy'
 }
 
-{ #category : #'undo - undo' }
-FlyBehavier >> do [
+{ #category : #'as yet unclassified' }
+FlyBehavier >> perform [
 	^ self subclassResponsibility 
 ]

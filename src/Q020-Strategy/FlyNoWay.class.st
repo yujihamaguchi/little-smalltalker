@@ -4,7 +4,7 @@ Class {
 	#category : #'Q020-Strategy'
 }
 
-{ #category : #'undo - undo' }
-FlyNoWay >> do [
+{ #category : #'as yet unclassified' }
+FlyNoWay >> perform [
 	^ 'no way'
 ]

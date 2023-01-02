@@ -14,7 +14,7 @@ Duck class >> flyBehavier: aFlyBehavier [
 
 { #category : #'as yet unclassified' }
 Duck >> fly [
-	^ flyBehavier do
+	^ flyBehavier perform
 ]
 
 { #category : #initialization }
@@ -24,6 +24,6 @@ Duck >> setFlyBehavier: aFlyBehavier [
 ]
 
 { #category : #'as yet unclassified' }
-Duck >> swim [ 
+Duck >> swim [
 	^ 'swimming'
 ]
