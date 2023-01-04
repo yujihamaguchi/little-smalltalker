@@ -9,10 +9,8 @@ SubjectTest >> testNotify [
 	| target observer1 observer2 |
 	target := Subject new initialize.
 
-	observer1 := Observer new.
-	(observer1 stub update: target) willReturnYourself.
-	observer2 := Observer new.
-	(observer2 stub update: target) willReturnYourself.
+	observer1 := Mock new.
+	observer2 := Mock new.
 
 	target addObserver: observer1.
 	target addObserver: observer2.

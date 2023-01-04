@@ -3,8 +3,7 @@ Class {
 	#superclass : #Subject,
 	#instVars : [
 		'temperature',
-		'humidity',
-		'pressure'
+		'humidity'
 	],
 	#category : #'Q030-Observer'
 }
@@ -16,31 +15,14 @@ WeatherData >> humidity [
 ]
 
 { #category : #initialization }
-WeatherData >> initialize [
-	super initialize.
-	temperature := 0.
-	humidity := 0.
-	pressure := 0.
-	^ self
-]
-
-{ #category : #accessing }
-WeatherData >> pressure [
-
-	^ pressure
-]
-
-{ #category : #initialization }
-WeatherData >> setTemperature: aTemperature humidity: aHumidity pressure: aPressure [
-	temperature := aTemperature.
-	humidity := aHumidity.
-	pressure := aPressure.
-	self notify.
-	^ self
-	
+WeatherData >> setTemperature: aNumber1 humidity: aNumber2 [
+	temperature := aNumber1.
+	humidity := aNumber2.
+	self notify
 ]
 
 { #category : #accessing }
 WeatherData >> temperature [
+
 	^ temperature
 ]

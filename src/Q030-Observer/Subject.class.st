@@ -13,12 +13,12 @@ Subject >> addObserver: anObserver [
 ]
 
 { #category : #initialization }
-Subject >> initialize [ 
-	observers := OrderedCollection new.
+Subject >> initialize [
+	observers := Set new.
 	^ self
 ]
 
 { #category : #'as yet unclassified' }
 Subject >> notify [
-	observers do: [ :each | each update: self ].
+	observers do: [ :each | each update: self ]
 ]

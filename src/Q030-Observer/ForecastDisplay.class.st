@@ -3,22 +3,25 @@ Class {
 	#superclass : #Observer,
 	#instVars : [
 		'temperature',
-		'humidity',
-		'pressure'
+		'humidity'
 	],
 	#category : #'Q030-Observer'
 }
 
+{ #category : #'as yet unclassified' }
+ForecastDisplay class >> weatherData: aWeatherData [
+	^ self new setSubject: aWeatherData
+]
+
 { #category : #api }
 ForecastDisplay >> display [
-	^ 'Forecast / temperature: ' ,  temperature asString
-	, ', humidity: ' , humidity asString , ', pressure: '
-	, pressure asString
+
+	^ 'Forecast / temperature: ' , temperature asString , ', humidity: '
+	  , humidity asString
 ]
 
 { #category : #updating }
-ForecastDisplay >> update: aWatherData [
-	temperature := aWatherData temperature.
-	humidity := aWatherData humidity. 
-	pressure  := aWatherData pressure.
+ForecastDisplay >> update: aWeatherData [
+	temperature := aWeatherData temperature.
+	humidity := aWeatherData humidity
 ]
