@@ -7,6 +7,11 @@ Class {
 	#category : #'Q040-Decorator'
 }
 
+{ #category : #'as yet unclassified' }
+Beverage class >> cost: aNumber [
+	^ self new setCost: aNumber
+]
+
 { #category : #accessing }
 Beverage >> cost [
 	^ cost

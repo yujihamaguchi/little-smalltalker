@@ -1,15 +1,16 @@
 Class {
 	#name : #Topping,
-	#superclass : #Beverage,
+	#superclass : #Object,
 	#instVars : [
-		'beverage'
+		'beverage',
+		'cost'
 	],
 	#category : #'Q040-Decorator'
 }
 
 { #category : #'as yet unclassified' }
 Topping class >> cost: aNumber beverage: aBeverage [
-	^ self new setCost: aNumber beverage: aBeverage
+	^ self new setCost: aNumber beverage: aBeverage 
 ]
 
 { #category : #accessing }
@@ -19,6 +20,7 @@ Topping >> cost [
 
 { #category : #initialization }
 Topping >> setCost: aNumber beverage: aBeverage [
+
 	cost := aNumber.
 	beverage := aBeverage.
 	^ self
