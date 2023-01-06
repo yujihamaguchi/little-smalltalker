@@ -1,5 +1,5 @@
 Class {
 	#name : #Ikura,
-	#superclass : #Sushi,
+	#superclass : #Object,
 	#category : #'Q051-Simple-Factory'
 }

@@ -14,10 +14,7 @@ SushiStore class >> factory: aFactory [
 
 { #category : #'as yet unclassified' }
 SushiStore >> orderSushi: aSymbol [
-	| sushi |
-	sushi := factory createSushi: aSymbol.
-	^ sushi prepare box
-
+	^ (factory createSushi: aSymbol) prepare box
 ]
 
 { #category : #initialization }

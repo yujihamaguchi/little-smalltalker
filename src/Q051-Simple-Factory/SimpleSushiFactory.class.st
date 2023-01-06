@@ -6,7 +6,5 @@ Class {
 
 { #category : #'as yet unclassified' }
 SimpleSushiFactory >> createSushi: aSymbol [
-	^ #Ikura = aSymbol
-		  ifTrue: [ Ikura new ]
-		  ifFalse: [ nil ]
+	^ #Ikura = aSymbol ifTrue: [ Ikura new ] ifFalse: [ nil ]
 ]

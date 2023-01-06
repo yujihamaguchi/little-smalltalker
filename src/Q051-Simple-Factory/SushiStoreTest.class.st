@@ -6,8 +6,8 @@ Class {
 
 { #category : #tests }
 SushiStoreTest >> testOrderSushi [
+	| sushi simpleSushiFactory target preparedSushi boxedSushi |
 
-	| sushi simpleSushiFactory sushiStore preparedSushi boxedSushi |
 	sushi := Mock new.
 	preparedSushi := Mock new.
 	boxedSushi := Mock new.
@@ -17,9 +17,9 @@ SushiStoreTest >> testOrderSushi [
 	simpleSushiFactory := Mock new.
 	(simpleSushiFactory stub createSushi: #Foo) willReturn: sushi.
 
-	sushiStore := SushiStore factory: simpleSushiFactory.
+	target := SushiStore factory: simpleSushiFactory.
 
-	self assert: (sushiStore orderSushi: #Foo) equals: boxedSushi.
+	self assert: (target orderSushi: #Foo) equals: boxedSushi.
 
 	(simpleSushiFactory should receive createSushi: #Foo) once.
 	sushi should receive prepare once.
