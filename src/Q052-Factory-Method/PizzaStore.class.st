@@ -11,8 +11,6 @@ PizzaStore >> createPizza: aSymbol [
 
 { #category : #'as yet unclassified' }
 PizzaStore >> orderPizza: aSymbol [
-	| pizza |
-	pizza := self createPizza: aSymbol.
-	^ pizza prepare bake cut box
-	
+
+	^ (self createPizza: aSymbol) prepare bake cut box
 ]

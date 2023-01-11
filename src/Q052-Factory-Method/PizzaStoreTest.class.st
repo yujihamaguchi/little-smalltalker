@@ -6,6 +6,7 @@ Class {
 
 { #category : #tests }
 PizzaStoreTest >> testOrderPizza [
+
 	| pizza target bakedPizza cutPizza boxedPizza preparedPizza |
 	pizza := Mock new.
 	preparedPizza := Mock new.

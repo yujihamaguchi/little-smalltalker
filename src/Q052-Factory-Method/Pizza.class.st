@@ -4,24 +4,18 @@ Class {
 	#instVars : [
 		'dough',
 		'name',
-		'toppings',
-		'sauce'
+		'toppings'
 	],
 	#category : #'Q052-Factory-Method'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : #adding }
 Pizza >> addToppings [
 	^ self subclassResponsibility 
 ]
 
 { #category : #'as yet unclassified' }
 Pizza >> createDough [
-	^ self subclassResponsibility 
-]
-
-{ #category : #'as yet unclassified' }
-Pizza >> createSauce [
 	^ self subclassResponsibility 
 ]
 
@@ -33,29 +27,15 @@ Pizza >> dough [
 
 { #category : #initialization }
 Pizza >> initialize [
-	name := 'NewYork Style Cheese Pizza'.
-	toppings := OrderedCollection new.
+	toppings := Set new.
 	^ self
-]
-
-{ #category : #accessing }
-Pizza >> name [
-
-	^ name
 ]
 
 { #category : #decoration }
 Pizza >> prepare [
 	dough := self createDough.
-	sauce := self createSauce.
-	toppings := self addToppings.
+	self addToppings.
 	^ self
-]
-
-{ #category : #accessing }
-Pizza >> sauce [
-
-	^ sauce
 ]
 
 { #category : #accessing }

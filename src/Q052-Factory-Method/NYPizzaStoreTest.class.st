@@ -6,6 +6,7 @@ Class {
 
 { #category : #tests }
 NYPizzaStoreTest >> testCreatePizza [
+
 	| nyPizzaStore |
 	nyPizzaStore := NYPizzaStore new.
 	self

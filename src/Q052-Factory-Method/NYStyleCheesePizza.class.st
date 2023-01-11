@@ -4,25 +4,12 @@ Class {
 	#category : #'Q052-Factory-Method'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : #adding }
 NYStyleCheesePizza >> addToppings [
-	toppings add: NewYorkCheese new.
-	^ toppings 
+	toppings add: NewYorkCheese new
 ]
 
 { #category : #'as yet unclassified' }
 NYStyleCheesePizza >> createDough [
 	^ ThinCraftDough new
-]
-
-{ #category : #'as yet unclassified' }
-NYStyleCheesePizza >> createSauce [
-	^ MarinaraSauce new
-]
-
-{ #category : #initialization }
-NYStyleCheesePizza >> initialize [
-	super initialize.
-	name := 'NewYork Style Cheese Pizza'.
-	^ self
 ]
