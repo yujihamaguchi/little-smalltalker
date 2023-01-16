@@ -6,6 +6,7 @@ Class {
 
 { #category : #tests }
 PastaStoreTest >> testOrderPasta [
+
 	| target pasta preparedPasta |
 	pasta := Mock new.
 	preparedPasta := Mock new.

@@ -5,7 +5,7 @@ Class {
 }
 
 { #category : #'as yet unclassified' }
-IngredientFactory >> createNoodle [ 
+IngredientFactory >> createNoodle [
 	^ self subclassResponsibility 
 ]
 

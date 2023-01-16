@@ -6,7 +6,5 @@ Class {
 
 { #category : #'as yet unclassified' }
 ChicagoPastaStore >> createPasta: aSymbol [
-	^ #Cheese = aSymbol
-		  ifTrue: [ ChicagoCheesePasta new ]
-		  ifFalse: [ nil ]
+	^ #Cheese = aSymbol ifTrue: [ ChicagoCheesePasta new ] ifFalse: [ nil ]
 ]

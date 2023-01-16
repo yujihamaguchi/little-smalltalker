@@ -5,7 +5,7 @@ Class {
 }
 
 { #category : #'as yet unclassified' }
-ChicagoIngredientFactory >> createNoodle [ 
+ChicagoIngredientFactory >> createNoodle [
 	^ ThickNoodle new
 ]
 

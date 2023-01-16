@@ -5,10 +5,11 @@ Class {
 }
 
 { #category : #tests }
-ChicagoIngredientFactoryTest >> testCreateNoodle [ 
+ChicagoIngredientFactoryTest >> testCreateNoodle [
+
 	| target |
 	target := ChicagoIngredientFactory new.
-	self assert: (target createNoodle) class equals: ThickNoodle.
+	self assert: target createNoodle class equals: ThickNoodle
 ]
 
 { #category : #tests }

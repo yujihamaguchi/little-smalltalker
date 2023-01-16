@@ -11,7 +11,5 @@ PastaStore >> createPasta: aSymbol [
 
 { #category : #'as yet unclassified' }
 PastaStore >> orderPasta: aSymbol [
-	| pasta |
-	pasta := self createPasta: aSymbol.
-	^pasta prepare
+	^ (self createPasta: aSymbol) prepare
 ]

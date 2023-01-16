@@ -11,9 +11,8 @@ Class {
 }
 
 { #category : #'as yet unclassified' }
-Pasta class >> ingredientFactory: anIngredientFactory name: aString [
-
-	^ self new setIngredientFactory: anIngredientFactory name: aString
+Pasta class >> ingredientFactory: aFactory name: aString [
+	^ self new setIngredientFactory: aFactory name: aString
 ]
 
 { #category : #accessing }
@@ -31,8 +30,7 @@ Pasta >> noodle [
 { #category : #decoration }
 Pasta >> prepare [
 	sauce := ingredientFactory createSauce.
-	noodle := ingredientFactory createNoodle.
-	^ self
+	noodle := ingredientFactory createNoodle
 ]
 
 { #category : #accessing }
@@ -42,9 +40,8 @@ Pasta >> sauce [
 ]
 
 { #category : #initialization }
-Pasta >> setIngredientFactory: anIngredientFactory name: aString [
-	ingredientFactory := anIngredientFactory.
-	name := aString..
+Pasta >> setIngredientFactory: aFactory name: aString [
+	ingredientFactory := aFactory.
+	name := aString.
 	^ self
-	
 ]
