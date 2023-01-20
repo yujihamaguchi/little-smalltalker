@@ -6,6 +6,7 @@ Class {
 
 { #category : #tests }
 SingletonTest >> testCurrent [
+
 	| object1 object2 |
 	"TODO: make multi thread creating instances below.
 	refer: https://books.pharo.org/booklet-ConcurrentProgramming/pdf/ConcurrentProgramming.pdf
