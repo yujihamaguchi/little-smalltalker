@@ -1,6 +1,6 @@
 Class {
 	#name : #FanOnCommand,
-	#superclass : #Object,
+	#superclass : #Command,
 	#instVars : [
 		'fan'
 	],
@@ -14,7 +14,7 @@ FanOnCommand class >> fan: aFan [
 
 { #category : #execution }
 FanOnCommand >> execute [
-	fan on.
+	fan on
 ]
 
 { #category : #initialization }

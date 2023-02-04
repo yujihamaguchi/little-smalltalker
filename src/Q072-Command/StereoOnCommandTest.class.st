@@ -9,6 +9,7 @@ Class {
 
 { #category : #tests }
 StereoOnCommandTest >> testExecute [
+
 	| target |
 	stereo := Mock new.
 	target := StereoOnCommand stereo: stereo.

@@ -11,6 +11,6 @@ FanOnCommandTest >> testExecute [
 	target := FanOnCommand fan: fan.
 
 	target execute.
-	
+
 	fan should receive on once
 ]

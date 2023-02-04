@@ -6,20 +6,25 @@ Class {
 
 { #category : #tests }
 RemoteControlTest >> testButtonWasPushed [
-	| target onCommand offCommand |
+	| target onCommand1 onCommand2 offCommand2 |
 	target := RemoteControl new.
-	onCommand := Mock new.
-	offCommand := Mock new.
-	target slot: 0 onCommand: onCommand offCommand: offCommand.
+
+	onCommand1 := Mock new.
+	target slot: 0 onCommand: onCommand1 offCommand: Any.
+
+	onCommand2 := Mock new.
+	offCommand2 := Mock new.
+	target slot: 1 onCommand: onCommand2 offCommand: offCommand2.
 
 	target onButtonWasPushed: 0.
-	onCommand should receive execute once.
+	onCommand1 should receive execute once.
 
-	target offButtonWasPushed: 0.
-	offCommand should receive execute once.
+	target onButtonWasPushed: 1.
+	onCommand2 should receive execute once.
+
+	target offButtonWasPushed: 1.
+	offCommand2 should receive execute once.
 
 	target undoButtonPushed.
-	onCommand should receive execute twice.
-
-
+	onCommand2 should receive execute twice
 ]

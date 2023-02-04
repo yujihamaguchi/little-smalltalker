@@ -1,6 +1,6 @@
 Class {
 	#name : #StereoOnCommand,
-	#superclass : #Object,
+	#superclass : #Command,
 	#instVars : [
 		'stereo'
 	],
@@ -16,7 +16,7 @@ StereoOnCommand class >> stereo: aStereo [
 StereoOnCommand >> execute [
 	stereo on.
 	stereo setCD.
-	stereo setVolume: 11.
+	stereo setVolume: 11
 ]
 
 { #category : #initialization }
