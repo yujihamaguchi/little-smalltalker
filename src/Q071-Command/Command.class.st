@@ -19,6 +19,5 @@ Command >> execute [
 
 { #category : #initialization }
 Command >> setReceiver: aReceiver [
-	receiver := aReceiver.
-	^ self
+	receiver := aReceiver
 ]

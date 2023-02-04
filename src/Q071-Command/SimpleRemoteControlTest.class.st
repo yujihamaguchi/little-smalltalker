@@ -6,7 +6,6 @@ Class {
 
 { #category : #tests }
 SimpleRemoteControlTest >> testButtonWasPressed [
-
 	| target command |
 	command := Mock new.
 

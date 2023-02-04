@@ -7,12 +7,12 @@ Class {
 { #category : #tests }
 LightOnCommandTest >> testExecute [
 
-	| lightOnCommand light |
+	| target light |
 	light := Mock new.
 
-	lightOnCommand := LightOnCommand receiver: light.
+	target := LightOnCommand receiver: light.
 
-	lightOnCommand execute.
+	target execute.
 
 	light should receive on
 ]
