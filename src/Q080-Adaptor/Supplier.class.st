@@ -7,13 +7,12 @@ Class {
 	#category : #'Q080-Adaptor'
 }
 
-{ #category : #accessing }
-Supplier >> deliveryDate [
-
-	^ deliveryDate
+{ #category : #'as yet unclassified' }
+Supplier >> deliveryDate [ 
+	^ deliveryDate 
 ]
 
-{ #category : #accessing }
-Supplier >> deliveryDate: aString [
-	deliveryDate := aString.
+{ #category : #'as yet unclassified' }
+Supplier >> deliveryDate: aDate [
+	deliveryDate := aDate
 ]

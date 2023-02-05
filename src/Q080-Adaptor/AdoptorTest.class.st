@@ -6,7 +6,6 @@ Class {
 
 { #category : #tests }
 AdoptorTest >> testArrivalDate [
-
 	"Assume Supplier as the current fixed class.
 	I would like to implement Customer/arrivalDate I/F with Supplier/deliveryDate.
 	This is because the values are the same but the message names are different

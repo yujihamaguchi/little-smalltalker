@@ -7,14 +7,14 @@ Class {
 	#category : #'Q080-Adaptor'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : #accessing }
 SupplierAdopter class >> supplier: aSupplier [
 	^ self new setSupplier: aSupplier
 ]
 
 { #category : #'as yet unclassified' }
 SupplierAdopter >> arrivalDate [
-	^ supplier deliveryDate
+	^ supplier deliveryDate 
 ]
 
 { #category : #initialization }
