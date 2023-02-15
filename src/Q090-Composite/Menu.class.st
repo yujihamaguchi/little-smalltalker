@@ -10,11 +10,10 @@ Class {
 { #category : #adding }
 Menu >> add: aMenuComponent [
 	menuComponents ifNil: [ menuComponents := OrderedCollection new ].
-	menuComponents add: aMenuComponent.
-	
+	menuComponents add: aMenuComponent
 ]
 
 { #category : #printing }
 Menu >> print [
-	menuComponents do: [ :each | each print ].
+	menuComponents do: [ :each | each print ]
 ]

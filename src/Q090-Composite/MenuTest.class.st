@@ -8,6 +8,7 @@ Class {
 MenuTest >> testPrint [
 
 	| target menuComponent1 menuComponent2 |
+	"Use lazy initializetion for the Menu class"
 	target := Menu new.
 	menuComponent1 := Mock new.
 	menuComponent2 := Mock new.
