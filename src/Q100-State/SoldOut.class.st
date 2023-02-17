@@ -6,12 +6,15 @@ Class {
 
 { #category : #'as yet unclassified' }
 SoldOut >> ejectCoin: aMachine [
+	^ self
 ]
 
 { #category : #'as yet unclassified' }
 SoldOut >> insertCoin: aMachine [
+	^ self
 ]
 
-{ #category : #accessing }
+{ #category : #'as yet unclassified' }
 SoldOut >> turnCrank: aMachine [
+	^ self
 ]

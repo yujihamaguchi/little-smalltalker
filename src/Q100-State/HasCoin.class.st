@@ -6,16 +6,18 @@ Class {
 
 { #category : #'as yet unclassified' }
 HasCoin >> ejectCoin: aMachine [
-	aMachine state: NoCoin new.
+	aMachine state: NoCoin new
 ]
 
 { #category : #'as yet unclassified' }
 HasCoin >> insertCoin: aMachine [
+	^ self
 ]
 
-{ #category : #accessing }
+{ #category : #'as yet unclassified' }
 HasCoin >> turnCrank: aMachine [
 	aMachine dispense.
-	aMachine state: (aMachine count = 0 ifTrue: [ SoldOut new  ] ifFalse: [ NoCoin new ]).
-
+	aMachine state: (aMachine count = 0
+			 ifTrue: [ SoldOut new ]
+			 ifFalse: [ NoCoin new ])
 ]

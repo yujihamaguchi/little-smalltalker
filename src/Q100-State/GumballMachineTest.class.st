@@ -6,6 +6,7 @@ Class {
 
 { #category : #tests }
 GumballMachineTest >> testGumballMachine [
+
 	| machine |
 	machine := GumballMachine initialize.
 	self assert: machine count equals: 5.
@@ -30,6 +31,7 @@ GumballMachineTest >> testGumballMachine [
 	machine turnCrank.
 	machine insertCoin.
 	machine turnCrank.
+	machine insertCoin.
 	machine ejectCoin.
 
 	self assert: machine count equals: 2.
@@ -43,4 +45,5 @@ GumballMachineTest >> testGumballMachine [
 
 	self assert: machine count equals: 0.
 	self assert: machine state class equals: SoldOut
+
 ]

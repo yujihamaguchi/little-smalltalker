@@ -1,6 +1,9 @@
 Class {
 	#name : #State,
 	#superclass : #Object,
+	#instVars : [
+		'machine'
+	],
 	#category : #'Q100-State'
 }
 
@@ -14,7 +17,7 @@ State >> insertCoin: aMachine [
 	^ self subclassResponsibility 
 ]
 
-{ #category : #accessing }
+{ #category : #'as yet unclassified' }
 State >> turnCrank: aMachine [
 	^ self subclassResponsibility 
 ]

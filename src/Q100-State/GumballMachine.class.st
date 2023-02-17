@@ -10,7 +10,7 @@ Class {
 
 { #category : #initialization }
 GumballMachine class >> initialize [
-	^ self new setCount: 5 state: NoCoin new
+	^ self new setState: NoCoin new count: 5
 ]
 
 { #category : #accessing }
@@ -21,21 +21,21 @@ GumballMachine >> count [
 
 { #category : #'as yet unclassified' }
 GumballMachine >> dispense [
-	count := count - 1.
+	count := count - 1
 ]
 
 { #category : #'as yet unclassified' }
 GumballMachine >> ejectCoin [
-	state ejectCoin: self.
+	state ejectCoin: self
 ]
 
 { #category : #'as yet unclassified' }
 GumballMachine >> insertCoin [
-	state insertCoin: self.
+	state insertCoin: self
 ]
 
 { #category : #initialization }
-GumballMachine >> setCount: aNumber state: aState [
+GumballMachine >> setState: aState count: aNumber [
 	count := aNumber.
 	state := aState.
 	^ self
@@ -43,15 +43,18 @@ GumballMachine >> setCount: aNumber state: aState [
 
 { #category : #accessing }
 GumballMachine >> state [
+
 	^ state
 ]
 
 { #category : #accessing }
 GumballMachine >> state: aState [
-	state := aState.
+
+	state := aState
 ]
 
-{ #category : #accessing }
+{ #category : #'as yet unclassified' }
 GumballMachine >> turnCrank [
 	state turnCrank: self
+
 ]

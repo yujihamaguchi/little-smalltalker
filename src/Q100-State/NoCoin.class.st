@@ -6,13 +6,15 @@ Class {
 
 { #category : #'as yet unclassified' }
 NoCoin >> ejectCoin: aMachine [
+	^ self
 ]
 
 { #category : #'as yet unclassified' }
 NoCoin >> insertCoin: aMachine [
-	aMachine state: HasCoin new.
+	aMachine state: HasCoin new
 ]
 
-{ #category : #accessing }
+{ #category : #'as yet unclassified' }
 NoCoin >> turnCrank: aMachine [
+	^ self
 ]
