@@ -8,35 +8,19 @@ Class {
 	#category : #'Q010-Money'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : #initialization }
 MyMoney class >> amount: aNumber currency: aSymbol [
 	^ self new setAmount: aNumber currency: aSymbol 
 ]
 
 { #category : #arithmetic }
 MyMoney >> + aMoney [
-
-	^ aMoney addMoney: self
+	^ aMoney plusMoney: self
 ]
 
 { #category : #comparing }
 MyMoney >> = aMoney [
 	^ currency = aMoney currency and: amount = aMoney amount
-]
-
-{ #category : #adding }
-MyMoney >> addMoney: aMoney [
-
-	^ currency = aMoney currency
-		  ifTrue: [ 
-		  self class amount: amount + aMoney amount currency: currency ]
-		  ifFalse: [ 
-		  MyMoneySum new initialize monies: (Bag with: self with: aMoney) ]
-]
-
-{ #category : #adding }
-MyMoney >> addMoneySum: aMoneySum [
-	^ aMoneySum addMoney: self
 ]
 
 { #category : #accessing }
@@ -49,6 +33,22 @@ MyMoney >> amount [
 MyMoney >> currency [
 
 	^ currency
+]
+
+{ #category : #arithmetic }
+MyMoney >> plusMoney: aMoney [
+	^ currency = aMoney currency
+		  ifTrue: [ 		
+		  self class amount: amount + aMoney amount currency: currency ]
+		  ifFalse: [ 
+			  MyMoneySum monies: ({ 
+					   self.
+					   aMoney } as: Bag) ]
+]
+
+{ #category : #arithmetic }
+MyMoney >> plusMoneySum: aMyMoneySum [
+	^ aMyMoneySum plusMoney: self
 ]
 
 { #category : #initialization }

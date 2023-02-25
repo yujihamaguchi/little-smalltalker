@@ -7,32 +7,19 @@ Class {
 	#category : #'Q010-Money'
 }
 
+{ #category : #initialization }
+MyMoneySum class >> monies: aCollection [
+	^ self new setMonies: aCollection
+]
+
 { #category : #arithmetic }
 MyMoneySum >> + aMoney [
-	^ aMoney addMoneySum: self
+	^ aMoney plusMoneySum: self
 ]
 
 { #category : #comparing }
-MyMoneySum >> = aMoneySum [
-	^ self monies = aMoneySum monies
-]
-
-{ #category : #adding }
-MyMoneySum >> addMoney: aMoney [
-	monies add: aMoney.
-	^ self
-]
-
-{ #category : #adding }
-MyMoneySum >> addMoneySum: aMoneySum [
-	monies addAll: aMoneySum monies.
-	^ self
-]
-
-{ #category : #initialization }
-MyMoneySum >> initialize [ 
-	monies := Bag new.
-	^ self
+MyMoneySum >> = aMyMoneySum [
+	^ monies = aMyMoneySum monies
 ]
 
 { #category : #accessing }
@@ -41,8 +28,19 @@ MyMoneySum >> monies [
 	^ monies
 ]
 
-{ #category : #accessing }
-MyMoneySum >> monies: aCollection [
+{ #category : #arithmetic }
+MyMoneySum >> plusMoney: aMoney [
+	monies add: aMoney.
+	^ self
+]
 
+{ #category : #arithmetic }
+MyMoneySum >> plusMoneySum: aMoneySum [
+	monies addAll: aMoneySum monies.
+	^ self
+]
+
+{ #category : #initialization }
+MyMoneySum >> setMonies: aCollection [
 	monies := aCollection
 ]
