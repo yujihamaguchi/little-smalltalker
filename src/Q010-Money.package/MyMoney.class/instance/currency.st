@@ -1,0 +1,4 @@
+accessing
+currency
+
+	^ currency
