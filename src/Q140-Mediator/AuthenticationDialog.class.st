@@ -1,16 +1,17 @@
 Class {
-	#name : #AuthenticationDialog,
-	#superclass : #Object,
+	#name : 'AuthenticationDialog',
+	#superclass : 'Object',
 	#instVars : [
 		'title',
 		'loginOrRegisterChkBx',
 		'loginForm',
 		'registerForm'
 	],
-	#category : #'Q140-Mediator'
+	#category : 'Q140-Mediator',
+	#package : 'Q140-Mediator'
 }
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 AuthenticationDialog >> initialize [
 
 	super initialize.
@@ -20,19 +21,19 @@ AuthenticationDialog >> initialize [
 	^ self
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 AuthenticationDialog >> loginForm [
 
 	^ loginForm
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 AuthenticationDialog >> loginOrRegisterChkBx [
 
 	^ loginOrRegisterChkBx
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 AuthenticationDialog >> notify: aComponent event: aSymbol [
 
 	self title: 'Log in'.
@@ -40,19 +41,19 @@ AuthenticationDialog >> notify: aComponent event: aSymbol [
 	self registerForm disable.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 AuthenticationDialog >> registerForm [
 
 	^ registerForm
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 AuthenticationDialog >> title [
 
 	^ title
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 AuthenticationDialog >> title: aString [
 
 	title := aString

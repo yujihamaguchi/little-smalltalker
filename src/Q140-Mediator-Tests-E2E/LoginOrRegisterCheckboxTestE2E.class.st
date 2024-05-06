@@ -1,23 +1,26 @@
 Class {
-	#name : #LoginOrRegisterCheckboxTestE2E,
-	#superclass : #TestCase,
-	#category : #'Q140-Mediator-Tests-E2E'
+	#name : 'LoginOrRegisterCheckboxTestE2E',
+	#superclass : 'TestCase',
+	#category : 'Q140-Mediator-Tests-E2E',
+	#package : 'Q140-Mediator-Tests-E2E'
 }
 
-{ #category : #tests }
+{ #category : 'tests' }
 LoginOrRegisterCheckboxTestE2E >> testCheck [
 
-	| authenticationDialog |
+	| dialog |
 	"Arrange"
-	authenticationDialog := AuthenticationDialog new.
-	self assert: authenticationDialog loginForm isDisabled.
-	self assert: authenticationDialog registerForm isEnabled.
+	dialog := AuthenticationDialog new.
+	self assert: dialog loginForm isDisabled.
+	self assert: dialog registerForm isEnabled.
+	self deny: dialog loginOrRegisterChkBx isChecked.
 
 	"Act"
-	authenticationDialog loginOrRegisterChkBx check.
+	dialog loginOrRegisterChkBx check.
 
 	"Assert"
-	self assert: authenticationDialog title equals: 'Log in'.
-	self assert: authenticationDialog loginForm isEnabled.
-	self assert: authenticationDialog registerForm isDisabled
+	self assert: dialog title equals: 'Log in'.
+	self assert: dialog loginForm isEnabled.
+	self assert: dialog registerForm isDisabled.
+	self assert: dialog loginOrRegisterChkBx isChecked
 ]

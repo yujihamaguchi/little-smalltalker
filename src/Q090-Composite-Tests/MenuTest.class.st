@@ -1,10 +1,11 @@
 Class {
-	#name : #MenuTest,
-	#superclass : #TestCase,
-	#category : #'Q090-Composite-Tests'
+	#name : 'MenuTest',
+	#superclass : 'TestCase',
+	#category : 'Q090-Composite-Tests',
+	#package : 'Q090-Composite-Tests'
 }
 
-{ #category : #tests }
+{ #category : 'tests' }
 MenuTest >> testAsPrintingString [
 
 	| menu depthNumber titleForPrinting subComponentsForPrinting |
@@ -28,7 +29,7 @@ MenuTest >> testAsPrintingString [
 	menu should receive subComponentsForPrinting: depthNumber + 1
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 MenuTest >> testSubComponentsForPrinting [
 
 	| menu depthNumber component1 component2 |
@@ -50,7 +51,7 @@ MenuTest >> testSubComponentsForPrinting [
 	component2 should receive asPrintingString: depthNumber
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 MenuTest >> testTitleForPrinting [
 
 	| titleForPrinting indentString title menu depthNumber |

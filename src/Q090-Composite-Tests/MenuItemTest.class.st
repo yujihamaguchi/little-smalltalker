@@ -1,10 +1,11 @@
 Class {
-	#name : #MenuItemTest,
-	#superclass : #TestCase,
-	#category : #'Q090-Composite-Tests'
+	#name : 'MenuItemTest',
+	#superclass : 'TestCase',
+	#category : 'Q090-Composite-Tests',
+	#package : 'Q090-Composite-Tests'
 }
 
-{ #category : #tests }
+{ #category : 'tests' }
 MenuItemTest >> testAsPrintingString [
 
 	| titleForPrinting menuItem depthNumber result |
@@ -23,7 +24,7 @@ MenuItemTest >> testAsPrintingString [
 	self assert: result equals: titleForPrinting
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 MenuItemTest >> testTitleForPrinting [
 
 	| menuItem depthNumber titleForPrinting title indentString |

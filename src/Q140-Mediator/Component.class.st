@@ -1,32 +1,33 @@
 Class {
-	#name : #Component,
-	#superclass : #Object,
+	#name : 'Component',
+	#superclass : 'Object',
 	#instVars : [
 		'dialog',
 		'enabled'
 	],
-	#category : #'Q140-Mediator'
+	#category : 'Q140-Mediator',
+	#package : 'Q140-Mediator'
 }
 
-{ #category : #'user interface' }
+{ #category : 'user interface' }
 Component class >> dialog: aDialog [
 
 	^ self new setDialog: aDialog
 ]
 
-{ #category : #protocol }
+{ #category : 'protocol' }
 Component >> disable [
 
 	enabled := false
 ]
 
-{ #category : #protocol }
+{ #category : 'protocol' }
 Component >> enable [
 
 	enabled := true
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 Component >> initialize [
 
 	super initialize.
@@ -34,19 +35,19 @@ Component >> initialize [
 	^ self
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 Component >> isDisabled [
 
 	^ enabled not
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 Component >> isEnabled [
 
 	^ enabled
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 Component >> setDialog: aDialog [
 
 	dialog := aDialog.

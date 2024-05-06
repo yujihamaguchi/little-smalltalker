@@ -1,30 +1,34 @@
 Class {
-	#name : #TPrintingMenuComponentTest,
-	#superclass : #TestCase,
+	#name : 'TPrintingMenuComponentTest',
+	#superclass : 'TestCase',
 	#instVars : [
 		'tempMenuComponentClass'
 	],
-	#category : #'Q090-Composite-Tests'
+	#category : 'Q090-Composite-Tests',
+	#package : 'Q090-Composite-Tests'
 }
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 TPrintingMenuComponentTest >> setUp [
 
-	tempMenuComponentClass := Object
-		                          subclass: #TempMenuComponentClass
-		                          uses: TPrintingMenuComponent
-		                          instanceVariableNames: ''
-		                          classVariableNames: ''
-		                          package: 'Q090-Composite'
+	tempMenuComponentClass := Object classInstaller make: [ :builder |
+		                          builder
+			                          superclass: Object;
+			                          name: #TempMenuComponentClass;
+			                          slotsFromString: '';
+			                          sharedVariablesFromString: '';
+			                          traitComposition: TPrintingMenuComponent;
+			                          package: 'Q090-Composite';
+			                          environment: Object environment ]
 ]
 
-{ #category : #running }
+{ #category : 'running' }
 TPrintingMenuComponentTest >> tearDown [
 
 	tempMenuComponentClass removeFromSystem
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 TPrintingMenuComponentTest >> testIndentStringFor [
 
 	| menuComponent depthNumber indentString |

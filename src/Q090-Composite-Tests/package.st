@@ -1,1 +1,1 @@
-Package { #name : #'Q090-Composite-Tests' }
+Package { #name : 'Q090-Composite-Tests' }
