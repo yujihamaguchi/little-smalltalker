@@ -1,23 +1,22 @@
 Class {
-	#name : 'LoginOrRegisterCheckboxTest',
+	#name : 'OkButtonTest',
 	#superclass : 'TestCase',
 	#category : 'Q140-Mediator-Tests',
 	#package : 'Q140-Mediator-Tests'
 }
 
 { #category : 'tests' }
-LoginOrRegisterCheckboxTest >> testCheck [
+OkButtonTest >> testClickWhenLogin [
 
 	| dialog target |
 	"Arrange"
 	dialog := Mock new.
-	target := LoginOrRegisterCheckbox dialog: dialog.
+	target := OkButton dialog: dialog.
 	(dialog stub notify: target event: #check) willReturnYourself.
-		
+
 	"Act"
-	target check.
+	target click.
 
 	"Assert"
-	dialog should receive notify: target event: #check
-
+	dialog notify: target event: #click
 ]

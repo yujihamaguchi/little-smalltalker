@@ -1,12 +1,10 @@
 Class {
-	#name : 'LoginForm',
+	#name : 'OkButton',
 	#superclass : 'Component',
 	#category : 'Q140-Mediator',
 	#package : 'Q140-Mediator'
 }
 
-{ #category : 'testing' }
-LoginForm >> isLoggedIn [
-
-	^ false
+{ #category : 'public' }
+OkButton >> click [
 ]

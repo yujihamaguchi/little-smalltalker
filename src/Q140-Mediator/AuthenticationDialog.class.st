@@ -5,7 +5,8 @@ Class {
 		'title',
 		'loginOrRegisterChkBx',
 		'loginForm',
-		'registerForm'
+		'registerForm',
+		'okButton'
 	],
 	#category : 'Q140-Mediator',
 	#package : 'Q140-Mediator'
@@ -18,6 +19,7 @@ AuthenticationDialog >> initialize [
 	loginOrRegisterChkBx := LoginOrRegisterCheckbox dialog: self.
 	loginForm := LoginForm dialog: self.
 	registerForm := RegisterForm dialog: self.
+	okButton := OkButton dialog: self.
 	^ self
 ]
 
@@ -39,6 +41,12 @@ AuthenticationDialog >> notify: aComponent event: aSymbol [
 	self title: 'Log in'.
 	self loginForm enable.
 	self registerForm disable.
+]
+
+{ #category : 'accessing' }
+AuthenticationDialog >> okButton [
+
+	^ okButton
 ]
 
 { #category : 'accessing' }

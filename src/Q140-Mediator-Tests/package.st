@@ -1,1 +1,1 @@
-Package { #name : #'Q140-Mediator-Tests' }
+Package { #name : 'Q140-Mediator-Tests' }
