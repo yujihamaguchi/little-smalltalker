@@ -18,5 +18,5 @@ OkButtonTest >> testClickWhenLogin [
 	target click.
 
 	"Assert"
-	dialog notify: target event: #click
+	dialog should receive notify: target event: #click
 ]

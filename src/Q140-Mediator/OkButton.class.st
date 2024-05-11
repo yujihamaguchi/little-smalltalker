@@ -7,4 +7,6 @@ Class {
 
 { #category : 'public' }
 OkButton >> click [
+
+	dialog notify: self event: #click
 ]

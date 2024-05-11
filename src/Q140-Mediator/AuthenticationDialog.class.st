@@ -38,9 +38,13 @@ AuthenticationDialog >> loginOrRegisterChkBx [
 { #category : 'as yet unclassified' }
 AuthenticationDialog >> notify: aComponent event: aSymbol [
 
-	self title: 'Log in'.
-	self loginForm enable.
-	self registerForm disable.
+	(aComponent class = LoginOrRegisterCheckbox and: aSymbol = #check)
+		ifTrue: [
+			self title: 'Log in'.
+			self loginForm enable.
+			self registerForm disable ].
+	(aComponent class = OkButton and: aSymbol = #click) ifTrue: [
+		self loginForm logIn ]
 ]
 
 { #category : 'accessing' }

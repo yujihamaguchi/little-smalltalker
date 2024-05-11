@@ -19,8 +19,8 @@ LoginOrRegisterCheckboxTestE2E >> testCheck [
 	dialog loginOrRegisterChkBx check.
 
 	"Assert"
+	self assert: dialog loginOrRegisterChkBx isChecked.
 	self assert: dialog title equals: 'Log in'.
 	self assert: dialog loginForm isEnabled.
-	self assert: dialog registerForm isDisabled.
-	self assert: dialog loginOrRegisterChkBx isChecked
+	self assert: dialog registerForm isDisabled
 ]
