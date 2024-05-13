@@ -14,13 +14,13 @@ MementoTestE2E >> testRestoreFromMemento [
 	caretaker := Caretaker new.
 	originator set: #state1.
 	originator set: #state2.
-	caretaker addMemento: originator seveToMemento.
+	caretaker addMemento: originator memento.
 	originator set: #state3.
-	caretaker addMemento: originator seveToMemento.
+	caretaker addMemento: originator memento.
 	originator set: #state4.
 
 	"Act"
-	result := originator restoreFromMemento: (caretaker memento: 1).
+	result := originator restoreFromMemento: (caretaker getMementoBy: 1).
 
 	"Assert"
 	self assert: result equals: #state3
