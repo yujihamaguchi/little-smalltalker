@@ -21,9 +21,9 @@ MementoTestE2E >> testRestoreFromMemento [
 	originator state: #state4.
 
 	"Act"
-	memento := caretaker mementoAt: 1.
+	memento := caretaker mementoAt: 2.
 	originator restoreFrom: memento.
 
 	"Assert"
-	self assert: originator state equals: #state2
+	self assert: originator state equals: #state3
 ]

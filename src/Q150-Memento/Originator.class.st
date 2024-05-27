@@ -19,6 +19,8 @@ Originator >> memento [
 
 { #category : 'as yet unclassified' }
 Originator >> restoreFrom: aMemento [
+
+	state := aMemento state
 ]
 
 { #category : 'accessing - structure variables' }
