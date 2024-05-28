@@ -11,7 +11,7 @@ Class {
 { #category : 'adding' }
 Caretaker >> addMemento: aMemento [
 
-	mementos add: aMemento 
+	mementos add: aMemento
 ]
 
 { #category : 'initialization' }
