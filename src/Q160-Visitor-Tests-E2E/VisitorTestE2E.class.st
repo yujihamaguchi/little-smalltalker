@@ -6,15 +6,15 @@ Class {
 }
 
 { #category : 'tests' }
-VisitorTestE2E >> testVisitorsAccepted [
+VisitorTestE2E >> testVisitorAccepted [
 
 	| result allShapes exportVisitor dot circle rectangle |
 	"Arrange"
 	exportVisitor := XMLExportVisitor new.
 	dot := MyDot new.
 	circle := MyCircle new.
-	rectangle := MyRectanble new.
-	allShapes := #( dot circle rectangle ).
+	rectangle := MyRectangle new.
+	allShapes := {  dot . circle . rectangle }.
 
 	"Act"
 	result := ', ' join:

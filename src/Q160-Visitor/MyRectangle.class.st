@@ -1,12 +1,12 @@
 Class {
-	#name : 'MyCircle',
+	#name : 'MyRectangle',
 	#superclass : 'MyElement',
 	#category : 'Q160-Visitor',
 	#package : 'Q160-Visitor'
 }
 
 { #category : 'visiting' }
-MyCircle >> accept: aVisitor [
+MyRectangle >> accept: aVisitor [
 
-	^ aVisitor visitForCircle: self
+	^ aVisitor visitForRectangle: self
 ]
