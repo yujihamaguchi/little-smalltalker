@@ -8,19 +8,19 @@ Class {
 { #category : 'tests' }
 VisitorTestE2E >> testVisitorAccepted [
 
-	| result allShapes exportVisitor dot circle rectangle |
+	| result allShapes exportVisitor |
 	"Arrange"
 	exportVisitor := XMLExportVisitor new.
-	dot := MyDot new.
-	circle := MyCircle new.
-	rectangle := MyRectangle new.
-	allShapes := {  dot . circle . rectangle }.
+	allShapes := OrderedCollection new.
+	allShapes add: MyDot new.
+	allShapes add: MyCircle new.
+	allShapes add: MyRectangle new.
 
 	"Act"
 	result := ', ' join:
-		          (allShapes do: [ :shape | shape accept: exportVisitor ]).
+		          (allShapes collect: [ :shape | shape accept: exportVisitor ]).
 	"Assert"
 	self
 		assert: result
-		equals: 'XMLed dot, XMLed circle, XMLed regtangle'
+		equals: 'XMLed dot, XMLed circle, XMLed rectangle'
 ]
