@@ -8,5 +8,5 @@ Class {
 { #category : 'visiting' }
 MyElement >> accept: aVisitor [
 
-	^ self subclassResponsibility 
+	^ self subclassResponsibility
 ]
