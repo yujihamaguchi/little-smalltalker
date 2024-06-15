@@ -12,13 +12,13 @@ CarBuilderTest >> testSetEngine [
 	"Arrange"
 	builder := CarBuilder new.
 	car := builder car.
-	self assert: car engine equals: nil. 
+	car stub.
 
 	"Act"
 	builder setEngine.
 
 	"Assert"
-	self assert: car engine equals: 'Engine'
+	car should receive engine: 'Engine'
 ]
 
 { #category : 'tests' }
@@ -28,11 +28,11 @@ CarBuilderTest >> testSetSeats [
 	"Arrange"
 	builder := CarBuilder new.
 	car := builder car.
-	self assert: car seats equals: nil. 
+	car stub.
 
 	"Act"
 	builder setSeats.
 
 	"Assert"
-	self assert: car seats equals: 'Seats'
+	car should receive seats: 'Seats'
 ]

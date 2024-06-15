@@ -1,6 +1,8 @@
 Class {
 	#name : 'CarManualBuilder',
 	#superclass : 'Object',
+	#traits : 'TCarBuilder',
+	#classTraits : 'TCarBuilder classTrait',
 	#instVars : [
 		'manual'
 	],
@@ -20,4 +22,16 @@ CarManualBuilder >> initialize [
 CarManualBuilder >> manual [
 
 	^ manual
+]
+
+{ #category : 'initialization' }
+CarManualBuilder >> setEngine [
+
+	manual engine: 'Engine manual'
+]
+
+{ #category : 'initialization' }
+CarManualBuilder >> setSeats [
+
+	manual seats: 'Seats manual'
 ]

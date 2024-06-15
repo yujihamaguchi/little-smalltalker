@@ -1,6 +1,8 @@
 Class {
 	#name : 'CarBuilder',
 	#superclass : 'Object',
+	#traits : 'TCarBuilder',
+	#classTraits : 'TCarBuilder classTrait',
 	#instVars : [
 		'car'
 	],

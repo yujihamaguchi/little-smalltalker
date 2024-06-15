@@ -1,19 +1,6 @@
 Class {
 	#name : 'MyCarManual',
-	#superclass : 'Object',
-	#instVars : [
-		'engine'
-	],
+	#superclass : 'CarProduct',
 	#category : 'Q170-Builder',
 	#package : 'Q170-Builder'
 }
-
-{ #category : 'accessing' }
-MyCarManual >> engine [
-
-	^ engine
-]
-
-{ #category : 'accessing' }
-MyCarManual >> seats [
-]

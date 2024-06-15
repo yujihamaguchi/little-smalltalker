@@ -14,4 +14,7 @@ Director >> constructCar: aCarBuilder [
 
 { #category : 'as yet unclassified' }
 Director >> constructCarManual: aCarManualBuilder [
+
+	aCarManualBuilder setSeats.
+	aCarManualBuilder setEngine
 ]
