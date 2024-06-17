@@ -8,15 +8,33 @@ Class {
 { #category : 'tests' }
 CircleTest >> testClone [
 
-	| circle clonedCircle |
+	| circle clonedCircle result |
 	"Arrange"
 	circle := MyCircle2 new.
 	clonedCircle := Mock new.
 	(MyCircle2 stub source: circle) willReturn: clonedCircle.
 
 	"Act"
-	circle myClone.
+	result := circle myClone.
 
 	"Assert"
-	MyCircle2 should receive source: circle
+	MyCircle2 should receive source: circle.
+	self assert: result equals: clonedCircle 
+]
+
+{ #category : 'tests' }
+CircleTest >> testSource [
+
+	| result circle |
+	"Arrange"
+	circle := MyCircle2 new.
+	circle stub.
+	(MyShape stub source: circle) willReturnYourself.
+
+	"Act"
+	result := MyCircle2 source: circle.
+
+	"Assert"
+	MyShape should receive source: circle.
+	circle should receive radius
 ]
