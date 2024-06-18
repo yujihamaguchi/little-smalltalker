@@ -13,12 +13,22 @@ Class {
 
 { #category : 'accessing' }
 MyShape class >> source: aSource [
+
+	| shape |
+	shape := self new.
+	shape color: aSource color
 ]
 
 { #category : 'private' }
 MyShape >> color [
 
 	^ color
+]
+
+{ #category : 'private' }
+MyShape >> color: aSymbol [
+
+	color := aSymbol
 ]
 
 { #category : 'as yet unclassified' }
