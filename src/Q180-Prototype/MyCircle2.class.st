@@ -9,19 +9,30 @@ Class {
 }
 
 { #category : 'accessing' }
+MyCircle2 class >> radius: aNumber [
+
+	^ self new setRadius: aNumber
+]
+
+{ #category : 'accessing' }
 MyCircle2 class >> source: aCircle [
 
-	superclass source: aCircle.
-	^ self new setRadius: aCircle radius.
-	
+	| circle |
+	circle := self new setRadius: aCircle radius.
+	circle := superclass source: aCircle shape: circle.
+	^ circle
+]
 
-	
+{ #category : 'comparing' }
+MyCircle2 >> = aCircle [
+
+	^ self radius = aCircle radius and: self color = aCircle color
 ]
 
 { #category : 'as yet unclassified' }
 MyCircle2 >> myClone [
 
-	^ MyCircle2 source: self 
+	^ self class source: self 
 ]
 
 { #category : 'accessing' }
@@ -30,14 +41,7 @@ MyCircle2 >> radius [
 	^ radius
 ]
 
-{ #category : 'as yet unclassified' }
-MyCircle2 >> radius: radiusNumber color: aSymbol [
-
-	color := aSymbol.
-	radius := radiusNumber
-]
-
-{ #category : 'accessing' }
+{ #category : 'initialization' }
 MyCircle2 >> setRadius: anObject [
 
 	radius := anObject.

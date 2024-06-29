@@ -12,11 +12,18 @@ Class {
 }
 
 { #category : 'accessing' }
-MyShape class >> source: aSource [
+MyShape class >> source: aShape [
 
-	| shape |
-	shape := self new.
-	shape color: aSource color
+	^ self subclassResponsibility 
+
+
+]
+
+{ #category : 'accessing' }
+MyShape class >> source: aSource shape: aShape [
+
+	aShape color: aSource color.
+	^ aShape
 ]
 
 { #category : 'private' }
