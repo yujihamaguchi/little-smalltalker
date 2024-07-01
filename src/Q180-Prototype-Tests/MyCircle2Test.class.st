@@ -8,42 +8,42 @@ Class {
 { #category : 'tests' }
 MyCircle2Test >> testClone [
 
-	| circle clonedCircle result |
+	| circle clone result |
 	"Arrange"
 	circle := MyCircle2 new.
-	clonedCircle := Mock new.
-	(MyCircle2 stub source: circle) willReturn: clonedCircle.
+	clone := Mock new.
+	(MyCircle2 stub source: circle) willReturn: clone.
 
 	"Act"
 	result := circle myClone.
 
 	"Assert"
 	MyCircle2 should receive source: circle.
-	self assert: result equals: clonedCircle 
+	self assert: result equals: clone
 ]
 
 { #category : 'tests' }
 MyCircle2Test >> testSource [
 
-	| result sourceCircle newCircle radius initializedCircle initializedShape |
+	| result circle radius clone color |
 	"Arrange"
-	sourceCircle := Mock new.
+	circle := Mock new.
 	radius := Mock new.
-	sourceCircle stub radius willReturn: radius.
-	newCircle := Mock new.
-	initializedCircle := Mock new.
-	(newCircle stub setRadius: radius) willReturn: initializedCircle.
-	MyCircle2 stub new willReturn: newCircle.
-	initializedShape := Mock new.
-	(MyShape stub source: sourceCircle shape: initializedCircle) willReturn: initializedShape.
-	
+	color := Mock new.
+	circle stub radius willReturn: radius.
+	circle stub color willReturn: color.
+
+	clone := Mock new.
+	(clone stub color: color) willReturnYourself.
+	(MyCircle2 stub radius: radius) willReturn: clone.
 
 	"Act"
-	result := MyCircle2 source: sourceCircle.
+	result := MyCircle2 source: circle.
 
 	"Assert"
-	MyCircle2 should receive new.
-	newCircle should receive setRadius: radius.
-	MyShape should receive source: sourceCircle shape: initializedCircle.
-	self assert: result equals: initializedShape.
+	circle should receive radius.
+	MyCircle2 should receive radius: radius.
+	circle should receive color.
+	clone should receive color: color.
+	self assert: result equals: clone
 ]

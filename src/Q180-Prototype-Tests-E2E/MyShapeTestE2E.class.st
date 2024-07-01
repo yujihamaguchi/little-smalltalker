@@ -6,26 +6,6 @@ Class {
 }
 
 { #category : 'tests' }
-MyShapeTestE2E >> testClone [
-
-"	| shapes circle rectangle |
-	""Arrange""
-	shapes := OrderedCollection new.
-	circle := MyCircle2 new.
-	circle radius: 20 color: #yellow.
-	rectangle := MyRectangle2 new.
-	rectangle width: 10 height: 20.
-
-	""Act""
-	shapes add: circle myClone.
-	shapes add: rectangle myClone.
-
-	""Assert""
-	self assert: (shapes at: 1) equals: circle.
-	self assert: (shapes at: 2) equals: rectangle"
-]
-
-{ #category : 'tests' }
 MyShapeTestE2E >> testCloneCircle [
 
 	| circle result |
@@ -53,4 +33,25 @@ MyShapeTestE2E >> testCloneRectangle [
 
 	"Assert"
 	self assert: result equals: rectangle
+]
+
+{ #category : 'tests' }
+MyShapeTestE2E >> testCloneShapes [
+
+	| shapes circle rectangle results |
+	"Arrange"
+	shapes := OrderedCollection new.
+	circle := MyCircle2 radius: 20.
+	circle color: #yellow.
+	rectangle := MyRectangle2 width: 10 height: 20.
+	rectangle color: #blue.
+	shapes add: circle myClone.
+	shapes add: rectangle myClone.
+
+	"Act"
+	results := shapes collect: [ :e | e myClone ].
+
+	"Assert"
+	self assert: (results at: 1) equals: circle.
+	self assert: (results at: 2) equals: rectangle
 ]

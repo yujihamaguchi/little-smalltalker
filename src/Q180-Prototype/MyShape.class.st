@@ -19,13 +19,6 @@ MyShape class >> source: aShape [
 
 ]
 
-{ #category : 'accessing' }
-MyShape class >> source: aSource shape: aShape [
-
-	aShape color: aSource color.
-	^ aShape
-]
-
 { #category : 'private' }
 MyShape >> color [
 

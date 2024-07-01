@@ -8,44 +8,45 @@ Class {
 { #category : 'tests' }
 MyRectangle2Test >> testClone [
 
-	| result rectangle cloned |
+	| result rectangle clone |
 	"Arrange"
 	rectangle := MyRectangle2 new.
-	cloned := Mock new.
-	(MyRectangle2 stub source: rectangle) willReturn: cloned.
+	clone := Mock new.
+	(MyRectangle2 stub source: rectangle) willReturn: clone.
 
 	"Act"
 	result := rectangle myClone.
 
 	"Arrange"
 	MyRectangle2 should receive source: rectangle.
-	self assert: result equals: cloned
+	self assert: result equals: clone
 ]
 
 { #category : 'tests' }
 MyRectangle2Test >> testSource [
 
-	| rectangle source result width height color |
+	| clone rectangle result width height color |
 	"Arrange"
-	source := Mock new.
+	rectangle := Mock new.
 	width := Mock new.
 	height := Mock new.
 	color := Mock new.
-	source stub width willReturn: width.
-	source stub height willReturn: height.
-	source stub color willReturn: color.
+	rectangle stub width willReturn: width.
+	rectangle stub height willReturn: height.
+	rectangle stub color willReturn: color.
 
-	rectangle := Mock new.
-	(rectangle stub color: color) willReturnYourself.
-	(MyRectangle2 stub width: width height: height) willReturn: rectangle.
+	clone := Mock new.
+	(clone stub color: color) willReturnYourself.
+	(MyRectangle2 stub width: width height: height) willReturn: clone.
 
 	"Act"
-	result := MyRectangle2 source: source.
+	result := MyRectangle2 source: rectangle.
 
 	"Assert"
-	source should receive width.
-	source should receive height.
+	rectangle should receive width.
+	rectangle should receive height.
 	MyRectangle2 should receive width: width height: height.
-	source should receive color.
-	self assert: result equals: rectangle
+	rectangle should receive color.
+	clone should receive color: color.
+	self assert: result equals: clone
 ]

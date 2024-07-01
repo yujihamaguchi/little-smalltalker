@@ -18,8 +18,8 @@ MyCircle2 class >> radius: aNumber [
 MyCircle2 class >> source: aCircle [
 
 	| circle |
-	circle := self new setRadius: aCircle radius.
-	circle := superclass source: aCircle shape: circle.
+	circle := self radius: aCircle radius.
+	circle color: aCircle color.
 	^ circle
 ]
 
