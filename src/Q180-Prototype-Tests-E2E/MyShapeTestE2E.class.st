@@ -38,20 +38,20 @@ MyShapeTestE2E >> testCloneRectangle [
 { #category : 'tests' }
 MyShapeTestE2E >> testCloneShapes [
 
-	| shapes circle rectangle results |
+	| shapes circle rectangle clones |
 	"Arrange"
-	shapes := OrderedCollection new.
 	circle := MyCircle2 radius: 20.
 	circle color: #yellow.
 	rectangle := MyRectangle2 width: 10 height: 20.
 	rectangle color: #blue.
+	shapes := OrderedCollection new.
 	shapes add: circle myClone.
 	shapes add: rectangle myClone.
 
 	"Act"
-	results := shapes collect: [ :e | e myClone ].
+	clones := shapes collect: [ :e | e myClone ].
 
 	"Assert"
-	self assert: (results at: 1) equals: circle.
-	self assert: (results at: 2) equals: rectangle
+	self assert: (clones at: 1) equals: circle.
+	self assert: (clones at: 2) equals: rectangle
 ]
